@@ -1,0 +1,109 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --green: hsl(75, 94%, 57%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+  --font-size-p: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--grey-900);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--grey-800);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+}
+
+.card > * {
+  margin-bottom: 10px;
+}
+
+img {
+  border-radius: 50%;
+  height: 35%;
+  width: 35%;
+  align-self: center;
+}
+
+p {
+  font-size: var(--font-size-p);
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.55em;
+}
+
+h2,
+p {
+  color: var(--white);
+  text-align: center;
+}
+
+.location {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.sub-text {
+  font-weight: 400;
+  margin-block: 20px;
+}
+
+button {
+  background-color: var(--grey-700);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  padding-block: 8px;
+  font-weight: 600;
+  font: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--green);
+  color: var(--grey-900);
+  caret-color: red;
+}
+@media screen and (max-width: 375px) {
+  .card {
+    padding: 12px;
+  }
+}
