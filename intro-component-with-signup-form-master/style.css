@@ -97,12 +97,12 @@ main {
 
 .left-container {
   color: white;
-  margin-left: 20em;
+  margin-left: 10em;
   max-width: 35em;
 }
 
 .right-container {
-  margin-right: 20em;
+  margin-right: 10em;
   margin-left: 3em;
   min-width: 35em;
 }
