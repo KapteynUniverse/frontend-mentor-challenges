@@ -1,0 +1,241 @@
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --fs: 16px;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+html {
+  font-family: "Poppins", system-ui;
+  font-weight: var(--fw-400);
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(./images/bg-intro-desktop.png);
+  background-color: var(--red);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  color: white;
+  margin-left: 20em;
+  max-width: 35em;
+}
+
+.right-container {
+  margin-right: 20em;
+  margin-left: 3em;
+  min-width: 35em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-wrap: balance;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1rem;
+  background-color: var(--blue);
+  text-align: center;
+  margin-bottom: 1em;
+  padding-inline: 2em;
+  padding-block: 1em;
+  border-radius: 0.625em;
+  color: white;
+  box-shadow: 0 0.4em rgba(0, 0, 0, 0.2);
+}
+
+h2 > span {
+  font-weight: var(--fw-400);
+}
+
+form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  padding: 2em;
+  border-radius: 0.625em;
+  box-shadow: 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
+input,
+button {
+  padding: 1em;
+  border-radius: 0.625em;
+  margin-bottom: 1em;
+}
+
+input {
+  border: 1px solid var(--grayish-blue);
+  outline: none;
+  padding-inline: 2em;
+}
+
+input:focus {
+  border: 1px solid var(--dark-blue);
+}
+
+input:not(:placeholder-shown):valid {
+  border: 1px solid var(--green);
+}
+
+input:not(:placeholder-shown):invalid {
+  border: 1px solid var(--red);
+  background-image: url(./images/icon-error.svg);
+  background-position: 95%;
+  background-repeat: no-repeat;
+}
+
+button {
+  border: none;
+  background-color: var(--green);
+  color: white;
+  box-shadow: 0.2em 0.2em #45b081;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+h3 {
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--grayish-blue);
+}
+
+.tos {
+  color: var(--red);
+}
+
+@media screen and (max-width: 850px) {
+  .right-container {
+    min-width: 25em;
+  }
+}
+@media screen and (max-width: 675px) {
+  .right-container {
+    min-width: 20em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-container {
+    margin: 2em;
+  }
+
+  .right-container {
+    margin: 2em;
+  }
+  p,
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    font-size: 12px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .left-container {
+    margin: 2em;
+  }
+
+  .right-container {
+    margin: 2em;
+  }
+  h1,
+  p {
+    text-align: center;
+  }
+  h2 {
+    text-wrap: balance;
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left-container">
+          <h1>Learn to code by watching others</h1>
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+        <div class="right-container">
+          <h2>Try it free 7 days <span>then $20/mo. thereafter</span></h2>
+          <form action="submit">
+            <input
+              type="text"
+              name="fname"
+              placeholder="First Name"
+              required
+              autofocus
+            />
+            <input type="text" name="lname" placeholder="Last Name" required />
+            <input type="email" placeholder="Email Address" required />
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              minlength="8"
+              maxlength="16"
+            />
+            <button>CLAIM YOUR FREE TRIAL</button>
+            <h3>
+              By clicking the button, you are agreeing to our
+              <span class="tos">Terms and Services</span>
+            </h3>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
