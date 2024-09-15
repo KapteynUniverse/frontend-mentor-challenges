@@ -127,6 +127,7 @@ button,
   padding: 1em;
   text-align: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 button {
@@ -136,6 +137,7 @@ button {
   color: var(--dark-blue);
   align-self: flex-start;
   padding: 0.5em;
+  cursor: pointer;
 }
 .selected,
 button:hover {
