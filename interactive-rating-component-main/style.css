@@ -1,0 +1,175 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --fs-p: 15px;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+html {
+  font-family: "Overpass", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--very-dark-blue);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  height: 25em;
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(var(--dark-blue), var(--very-dark-blue));
+  color: var(--light-grey);
+  border-radius: 1em;
+  padding: 1.5em;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 1.875rem;
+}
+
+h1,
+button,
+.rate {
+  font-weight: var(--fw-700);
+}
+
+.star {
+  background-color: var(--very-dark-blue);
+  border-radius: 50%;
+  padding: 1em;
+  width: 3em;
+  height: 3em;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rate {
+  width: 3em;
+  height: 3em;
+  background-color: var(--dark-blue);
+  padding: 1em;
+  text-align: center;
+  border-radius: 50%;
+}
+
+button {
+  width: 100%;
+  border-radius: 1em;
+  background-color: var(--orange);
+  color: var(--dark-blue);
+  align-self: flex-start;
+  padding: 0.5em;
+}
+.selected,
+button:hover {
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+}
+
+.rate:hover {
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
+}
+
+.hidden {
+  display: none;
+}
+
+#final-rate {
+  color: var(--orange);
+  background-color: var(--dark-blue);
+  border-radius: 1em;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  width: max-content;
+  align-self: center;
+}
+
+.star-2 {
+  height: 5em;
+  width: 6em;
+  align-self: center;
+}
+@media screen and (max-width: 400px) {
+  .card {
+    height: 25em;
+    width: 21em;
+  }
+}
