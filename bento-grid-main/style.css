@@ -1,0 +1,357 @@
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+:root {
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+  --fs-p: 18px;
+  --fw-400: 400;
+  --fw-500: 500;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+html {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--fw-500);
+  font-style: normal;
+  font-size: calc(100vw / 90);
+}
+body {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  line-height: 1;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(6.25em, 18.75em));
+  grid-template-rows: 18.75em 7.5em 11.25em 18.75em;
+  gap: 2em;
+  margin: 5em;
+  overflow: hidden;
+}
+
+.advertise {
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  border-radius: 0.25em;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.ad-1 {
+  background-color: var(--yellow-100);
+  font-size: 2.5rem;
+}
+
+.ad-2 {
+  color: var(--yellow-100);
+  text-align: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.ad-3 {
+  grid-row: span 3;
+  background-color: var(--purple-100);
+}
+
+.ad-4 {
+  font-size: 2.8rem;
+}
+
+.ad-5 {
+  justify-content: space-around;
+  font-size: 2.3rem;
+}
+
+.ad-7 {
+  line-height: 1.5;
+}
+
+.ad-8 {
+  flex-direction: row;
+}
+
+.ad-2,
+.ad-8 {
+  background-color: var(--purple-500);
+  grid-column: span 2;
+}
+
+.ad-4,
+.ad-6 {
+  background-color: var(--yellow-500);
+}
+
+.ad-5,
+.ad-6 {
+  overflow: hidden;
+}
+
+.ad-5,
+.ad-7 {
+  background-color: var(--white);
+}
+
+.ad-1,
+.ad-4,
+.ad-5,
+.ad-6 {
+  grid-row: span 2;
+}
+
+.ad-1 > p {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.ad-3 > p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.ad-3 > p:last-child {
+  font-size: 1.3rem;
+}
+
+.ad-6 > p,
+.ad-7 > p,
+.ad-4 > p {
+  flex: 1;
+}
+
+.ad-6 > p {
+  font-size: 2.5rem;
+  margin-block: 0.5em;
+}
+
+.ad-7 > p {
+  font-size: 1rem;
+}
+
+.ad-8 > p {
+  align-self: center;
+  font-size: 2.2rem;
+  color: var(--purple-100);
+  margin-left: 0.3em;
+}
+
+.ad-2 > img {
+  max-width: 4.5em;
+  margin-top: 0.3em;
+  margin-bottom: 0.1em;
+  align-self: center;
+}
+
+.ad-3 > img {
+  height: 55%;
+  width: 185%;
+}
+
+.ad-4 > img {
+  height: 58%;
+  width: 108%;
+}
+
+.ad-5 > img {
+  width: 160%;
+}
+
+.ad-6 > img {
+  margin-top: 0.5em;
+}
+
+.big {
+  font-size: 5rem;
+}
+
+.small {
+  font-weight: var(--fw-400);
+  font-size: 1rem;
+}
+
+.yellow {
+  color: var(--yellow-500);
+}
+
+.purple {
+  color: var(--purple-500);
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 8px;
+  }
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advertise {
+    border-radius: 0.5em;
+  }
+
+  .ad-2 {
+    order: 1;
+  }
+  .ad-4 {
+    order: 8;
+    font-weight: bold;
+  }
+  .ad-5 {
+    order: 2;
+    font-weight: bold;
+  }
+  .ad-3 {
+    text-align: center;
+    order: 4;
+    font-size: 2.5rem;
+  }
+  .ad-8 {
+    flex-direction: column;
+    order: 5;
+    text-align: center;
+    align-items: center;
+  }
+  .ad-7 {
+    order: 6;
+  }
+  .ad-1 {
+    order: 7;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+  .ad-6 {
+    order: 3;
+    font-weight: bold;
+  }
+
+  .ad-1 > img {
+    width: 70%;
+  }
+
+  .ad-2 > img {
+    max-width: 4.5em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    align-self: center;
+  }
+
+  .ad-3 > img {
+    width: 100%;
+  }
+
+  .ad-4 > img {
+    width: 75%;
+  }
+
+  .ad-5 > img {
+    width: 100%;
+  }
+
+  .ad-6 > img {
+    width: 75%;
+  }
+
+  .ad-7 > img {
+    width: 60%;
+    margin-block: 1em;
+  }
+
+  .ad-8 > img {
+    width: 75%;
+    margin-block: 1.5em;
+  }
+  .ad-2 > p:last-child {
+    font-size: 2rem;
+  }
+  .ad-3 > p:first-child {
+    font-weight: bold;
+  }
+  .ad-3 > p:last-child {
+    font-size: 2rem;
+  }
+  .ad-4 > p {
+    margin-block: 0.5em;
+  }
+  .ad-7 > p {
+    font-size: 2rem;
+  }
+  .ad-8 > p {
+    font-size: 3rem;
+    margin-inline: 1em;
+    margin-bottom: 1em;
+  }
+
+  .ad-7 > p > span {
+    margin-right: 3em;
+  }
+}
