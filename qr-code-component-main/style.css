@@ -82,7 +82,7 @@ body {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  border-radius: 1.5em;
+  border-radius: 1em;
   gap: 1.5em;
   text-align: center;
   box-shadow: 0 .3em .5em var(--slate-500);
