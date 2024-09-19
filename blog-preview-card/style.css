@@ -1,0 +1,146 @@
+/* 1440 375 */
+
+@font-face {
+  font-family: Figtree;
+  src: local("Figtree"), url("./assets/fonts/Figtree-VariableFont_wght.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Figtree;
+  src: local("Figtree Italic"),
+    url("./assets/fonts/Figtree-Italic-VariableFont_wght.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+  --fs-p: 16px;
+  --fw-500: 500;
+  --fw-800: 800;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  background-color: var(--yellow);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Figtree", sans-serif;
+  font-weight: var(--fw-500);
+  font-style: normal;
+  font-size: var(--fs-p);
+}
+
+.card {
+  max-width: 22em;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  gap: 1em;
+  border: 0.125em solid var(--gray-950);
+  border-radius: 1.5em;
+  box-shadow: 0.5em 0.5em var(--gray-950);
+}
+
+.card > img {
+  border-radius: 1em;
+}
+
+.category {
+  background-color: var(--yellow);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  max-width: fit-content;
+  margin-top: 1em;
+}
+
+.title > a {
+  text-decoration: none;
+  color: var(--gray-950);
+}
+
+.title > a:hover {
+  color: var(--yellow);
+}
+
+.sub-title {
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.profile > img {
+  height: 2em;
+  width: 2em;
+}
+
+.category,
+.title,
+.name {
+  font-weight: var(--fw-800);
+}
