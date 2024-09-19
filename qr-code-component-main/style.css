@@ -1,0 +1,102 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+  --fs: 1rem;
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: "Outfit", system-ui;
+  font-optical-sizing: auto;
+  font-weight: var(--fw-400);
+  font-style: normal;
+  font-size: var(--fs);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--slate-300);
+}
+
+.qr-card {
+  max-width: 20em;
+  padding: 1em;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5em;
+  gap: 1.5em;
+  text-align: center;
+}
+
+.qr-code {
+  border-radius: inherit;
+}
+
+h1 {
+  color: var(--slate-900);
+  line-height: 1.25;
+}
+
+p {
+  color: var(--slate-500);
+  margin-bottom: 1.5em;
+}
