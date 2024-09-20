@@ -1,0 +1,205 @@
+@font-face {
+  font-family: Montserrat;
+  src: local("Montserrat"),
+    url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: Fraunces;
+  src: local("Fraunces"),
+    url("./assets/fonts/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
+  font-weight: 700;
+}
+
+:root {
+  /* Primary */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  /* Neutral */
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --fs-p: 14px;
+  --fw-500: 500;
+  --fw-montserrat-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: Fraunces;
+  font-size: var(--fs-p);
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white);
+  max-width: 24em;
+  border-radius: 1em;
+}
+
+picture,
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1em 1em 0 0;
+}
+
+.figcaption {
+  margin-bottom: 0.75em;
+  color: var(--grayish-blue);
+  letter-spacing: 0.25em;
+  font-family: Montserrat;
+}
+
+.details {
+  padding: 1.5em;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--very-dark-blue);
+}
+
+.sub-title {
+  color: var(--grayish-blue);
+  font-family: Montserrat;
+}
+
+.price-tag {
+  position: relative;
+  color: var(--dark-cyan);
+  font-size: 2rem;
+}
+
+.price-tag > span {
+  position: absolute;
+  top: 0;
+  right: 35%;
+  transform: translateY(70%);
+  color: var(--grayish-blue);
+  font-size: 0.875rem;
+  font-family: Montserrat;
+  font-weight: var(--fw-500);
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  width: 100%;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  padding-block: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
+  background-color: #1a4031;
+}
+
+.add-to-cart > img {
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.sub-title,
+.price-tag,
+.add-to-cart {
+  margin-top: 0.75em;
+}
+
+@media screen and (min-width: 600px) {
+  .product {
+    flex-direction: row;
+    min-width: 43em;
+    align-items: stretch;
+  }
+  picture,
+  img {
+    border-radius: 1em 0 0 1em;
+  }
+
+  .details {
+    padding: 1em 2.5em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .price-tag > span {
+    right: 10%;
+  }
+  .sub-title,
+  .price-tag,
+  .add-to-cart {
+    margin-top: 0;
+  }
+}
