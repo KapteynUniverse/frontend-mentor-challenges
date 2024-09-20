@@ -178,7 +178,7 @@ img {
 @media screen and (min-width: 600px) {
   .product {
     flex-direction: row;
-    min-width: 43em;
+    min-width: 45em;
     align-items: stretch;
   }
   picture,
