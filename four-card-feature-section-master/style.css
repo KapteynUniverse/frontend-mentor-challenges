@@ -1,0 +1,177 @@
+@font-face {
+  font-family: Poppins;
+  src: local("Poppins"), url("./assets/fonts/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+
+:root {
+  /* Primary */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  /* Neutral */
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --fs-p: 15px;
+  --fw-200: 200;
+  --fw-600: 600;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: Poppins;
+  font-size: var(--fs-p);
+  min-height: 100vh;
+  background-color: var(--very-light-gray);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  max-width: 54ch;
+  text-align: center;
+}
+
+.title {
+  margin-top: 3em;
+}
+
+.title,
+.sub-title {
+  font-weight: var(--fw-200);
+  color: var(--grayish-blue);
+}
+
+.title > span {
+  font-weight: var(--fw-600);
+  color: var(--very-dark-blue);
+}
+
+.sub-title {
+  margin-top: 1.5em;
+  margin-bottom: 4.5em;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+
+.card {
+  position: relative;
+  max-width: 24em;
+  min-width: 16em;
+  min-height: 15em;
+  background-color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0.5em 2em var(--grayish-blue);
+  padding: 1.5em;
+  color: var(--very-dark-blue);
+}
+
+.card > p {
+  color: var(--grayish-blue);
+  margin-top: 0.5em;
+}
+
+.supervisor {
+  border-top: 0.25em solid var(--cyan);
+}
+
+.team-builder {
+  border-top: 0.25em solid var(--red);
+  margin-bottom: 2em;
+}
+
+.karma {
+  border-top: 0.25em solid var(--orange);
+}
+
+.calculator {
+  border-top: 0.25em solid var(--blue);
+}
+
+img {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 750px) {
+  header {
+    font-size: 0.75rem;
+    text-align: left;
+    margin-inline: 1.5em;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    max-width: 22em;
+  }
+}
