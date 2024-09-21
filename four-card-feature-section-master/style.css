@@ -162,14 +162,16 @@ img {
 }
 
 @media screen and (max-width: 750px) {
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
   header {
     font-size: 0.75rem;
     text-align: left;
     margin-inline: 1.5em;
-  }
-
-  .cards {
-    flex-direction: column;
   }
   .card {
     max-width: 22em;
