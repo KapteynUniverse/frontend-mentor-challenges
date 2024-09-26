@@ -207,6 +207,10 @@ a:hover,
     max-width: 25em;
   }
 
+    .furniture__image > img {
+    border-radius: 1em 0 0 1em;
+  }
+
   .socials {
     position: absolute;
     border-radius: 1em;
