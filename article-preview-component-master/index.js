@@ -8,6 +8,7 @@ window.onresize = window.onload = function () {
   w = this.innerWidth;
   socials.classList.add("hidden");
   profile.classList.remove("hidden");
+  buttonTwo.classList.remove("hidden");
 };
 
 button.addEventListener("click", toggle);
