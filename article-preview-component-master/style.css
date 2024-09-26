@@ -181,10 +181,15 @@ body {
   padding: 0.75em;
 }
 
-/* Mobile Toggle */
-
 .hidden {
   display: none;
+}
+
+a:hover,
+.hidden-btn:hover,
+.share-btn:hover {
+  cursor: pointer;
+  opacity: 0.75;
 }
 
 @media screen and (min-width: 65em) {
