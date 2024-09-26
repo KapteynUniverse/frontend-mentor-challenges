@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="hidden">Placeholder</h1>
+      <article class="furniture">
+        <div class="furniture__image">
+          <img src="./assets/images/drawers.jpg" alt="Drawer photo" />
+        </div>
+        <div class="furniture__text-section">
+          <h2 class="furniture__text">
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h2>
+          <p class="furniture__sub-text">
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I’ve got some simple tips to help
+            you make any room feel complete.
+          </p>
+          <div class="furniture__profile-section">
+            <img
+              src="./assets/images/avatar-michelle.jpg"
+              alt="Michelle Appleton profile picture"
+            />
+            <div class="furniture__name">
+              <p>Michelle Appleton</p>
+              <time datetime="2020-06-28 00:00">28 Jun 2020</time>
+            </div>
+            <div class="share-btn">
+              <img
+                src="./assets/images/icon-share.svg"
+                alt="Share button"
+                id="share-btn1"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="socials">
+          <h3 class="socials__text">SHARE</h3>
+          <a href="https://www.facebook.com/"
+            ><img
+              src="./assets/images/icon-facebook.svg"
+              alt="Share on Facebook"
+          /></a>
+          <a href="https://x.com/home"
+            ><img src="./assets/images/icon-twitter.svg" alt="Share on X"
+          /></a>
+          <a href="https://youtu.be/dQw4w9WgXcQ?si=ujF7FpPTB1CxS0lw"
+            ><img
+              src="./assets/images/icon-pinterest.svg"
+              alt="Share on Pinterest"
+          /></a>
+          <img
+            src="./assets/images/icon-share.svg"
+            alt="Share button"
+            id="share-btn2"
+            class="hidden-btn"
+          />
+        </div>
+      </article>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+/* The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
+
+Your users should be able to:
+
+See the social media share links when they click the share icon
+View the optimal layout for each page depending on their device's screen size
+See hover states for all interactive elements on the page */
+
+@font-face {
+  font-family: Manrope;
+  src: local("Manrope"), url("./assets/fonts/Manrope-VariableFont_wght.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --fs-p: 0.8125rem;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: Manrope;
+  font-size: var(--fs-p);
+  min-height: 100dvh;
+  background-color: var(--light-grayish-blue);
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.furniture {
+  display: flex;
+  flex-direction: column;
+  width: 86%;
+  max-width: 30em;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.furniture__image > img {
+  border-radius: 1em 1em 0 0;
+  max-width: 100%;
+  min-width: 21em;
+  height: 100%;
+  object-fit: cover;
+}
+
+.furniture__text-section {
+  padding: 2em 2.5em;
+}
+
+.furniture__text {
+  font-size: 1rem;
+  margin: 1em 0;
+  color: var(--very-dark-grayish-blue);
+}
+
+.furniture__sub-text {
+  margin-bottom: 2em;
+  color: var(--desaturated-dark-blue);
+}
+
+.furniture__text,
+.furniture__name > p {
+  font-weight: var(--fw-700);
+}
+.furniture__profile-section {
+  display: flex;
+  gap: 1.5em;
+}
+.furniture__profile-section > img {
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+}
+
+.furniture__name {
+  align-self: center;
+  color: var(--very-dark-grayish-blue);
+}
+
+.furniture__name > p {
+  margin-bottom: 0.25em;
+}
+.furniture__name > time {
+  color: var(--grayish-blue);
+}
+
+.share-btn {
+  margin-block: auto;
+  margin-left: auto;
+  background-color: var(--light-grayish-blue);
+  justify-self: flex-end;
+  border-radius: 100%;
+  padding: 0.75em;
+}
+
+.socials {
+  background-color: var(--very-dark-grayish-blue);
+  display: flex;
+  gap: 1.5em;
+  padding: 2em;
+  border-radius: 0 0 1em 1em;
+  align-items: center;
+}
+
+.socials__text {
+  letter-spacing: 0.5em;
+  color: var(--grayish-blue);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.hidden-btn {
+  margin-left: auto;
+  background-color: var(--light-grayish-blue);
+  border-radius: 100%;
+  padding: 0.75em;
+}
+
+/* Mobile Toggle */
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 65em) {
+  .furniture {
+    flex-direction: row;
+    max-width: 60em;
+    position: relative;
+  }
+
+  .furniture__text-section {
+    margin-left: 1em;
+  }
+
+  .furniture__text {
+    font-size: 1.25rem;
+    margin-top: 0.25em;
+  }
+
+  .furniture__sub-text {
+    max-width: 45ch;
+  }
+  .furniture__image {
+    max-width: 25em;
+  }
+
+  .socials {
+    position: absolute;
+    border-radius: 1em;
+    right: 0;
+    bottom: 30%;
+    transform: translateX(30%);
+    padding-block: 1em;
+  }
+  .socials__text {
+    letter-spacing: 0.25em;
+    font-size: 0.75rem;
+  }
+  .socials::after {
+    content: "";
+    position: absolute;
+    left: 45%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--very-dark-grayish-blue);
+    clear: both;
+  }
+}
