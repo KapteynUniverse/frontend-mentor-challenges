@@ -1,0 +1,263 @@
+/* Your users should be able to:
+
+Add their email and submit the form
+See a success message with their email after successfully submitting the form
+See form validation messages if:
+The field is left empty
+The email address is not formatted correctly
+View the optimal layout for the interface depending on their device's screen size
+See hover and focus states for all interactive elements on the page */
+
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("./assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto"), url("./assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+:root {
+  /* Primary */
+  --tomato: hsl(4, 100%, 67%);
+  --pink: rgb(255, 83, 123);
+  --tomato-low-opacity: rgb(255, 232, 230);
+  /* Neutral */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+  --fs-p: 1rem;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: var(--fs-p);
+  min-height: 100dvh;
+  background-color: var(--charcoal-grey);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+article {
+  height: 100%;
+}
+
+.newsletter-sign-up-form,
+.success {
+  background-color: var(--white);
+  height: 100%;
+  max-width: 25em;
+}
+.newsletter-sign-up-form__input-section,
+.success {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 2em 1.5em;
+}
+
+.success {
+  justify-content: space-between;
+}
+
+.success__text-section {
+  margin-top: 25%;
+}
+
+.success__text-section > * {
+  margin-top: 1.5em;
+}
+
+.success__text-section > img {
+  width: max-content;
+}
+
+.newsletter-sign-up-form__input-section__text,
+h2 {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.newsletter-sign-up-form__input-section__list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.newsletter-sign-up-form__input-section__list li {
+  position: relative;
+  padding-left: 2em;
+  margin-top: 0.75em;
+}
+.newsletter-sign-up-form__input-section__list li::before {
+  content: "";
+  background-image: url("./assets/images/icon-success.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.25em;
+  height: 1.25em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+label {
+  font-size: 0.875rem;
+  margin-bottom: -1.375em;
+  position: relative;
+}
+
+.invalid {
+  color: var(--tomato);
+  position: absolute;
+  right: 0;
+}
+
+.btn {
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+input {
+  outline: none;
+  border: 1px solid var(--grey);
+}
+
+label,
+.btn {
+  font-weight: 700;
+}
+input,
+.btn {
+  padding-block: 1em;
+  padding-inline: 1.5em;
+  border-radius: 0.5em;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--pink), var(--tomato));
+  box-shadow: 5px 10px 18px var(--tomato);
+}
+
+input:not(:placeholder-shown):invalid {
+  color: var(--tomato);
+  border: 1px solid var(--tomato);
+  background-color: var(--tomato-low-opacity);
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  article {
+    height: fit-content;
+  }
+  .newsletter-sign-up-form {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: none;
+    border-radius: 2em;
+    padding: 1.125em;
+  }
+  .newsletter-sign-up-form__input-section {
+    padding-inline: 3em;
+  }
+  .newsletter-sign-up-form__input-section__text {
+    font-size: 3.5rem;
+    margin-top: 0.5em;
+  }
+  .success {
+    border-radius: 2em;
+    min-width: 30em;
+    padding-inline: 3em;
+    padding-block: 2em;
+  }
+  .success__text-section {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+  .success__text-section > * {
+    margin-top: 0;
+    margin-top: 1em;
+  }
+  .hidden {
+    display: none;
+  }
+}
