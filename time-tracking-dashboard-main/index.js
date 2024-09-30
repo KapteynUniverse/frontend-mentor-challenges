@@ -3,10 +3,10 @@ const container = document.getElementById('dashboard');
 
 const appendItem = (item) => {
     container.innerHTML += `
-  <section class="${item.title} card daily hidden">
+  <section class="${(item.title).toLowerCase()} card daily hidden">
           <div class="background layout ${(item.title).toLowerCase()}-${item.background}">
             <img
-              src="./assets/images/icon-${item.title}.svg"
+              src="./assets/images/icon-${(item.title).toLowerCase()}.svg"
               alt=""
               class="background-img"
             />
@@ -26,10 +26,10 @@ const appendItem = (item) => {
           </div>
 
         </section>
-          <section class="${item.title} card weekly">
+          <section class="${(item.title).toLowerCase()} card weekly">
           <div class="background layout ${(item.title).toLowerCase()}-${item.background}">
             <img
-              src="./assets/images/icon-${(item.title)}.svg"
+              src="./assets/images/icon-${(item.title).toLowerCase()}.svg"
               alt=""
               class="background-img"
             />
@@ -50,10 +50,10 @@ const appendItem = (item) => {
         </section>
 
             </section>
-          <section class="${item.title} card monthly hidden">
+          <section class="${(item.title).toLowerCase()} card monthly hidden">
           <div class="background layout ${(item.title).toLowerCase()}-${item.background}">
             <img
-              src="./assets/images/icon-${item.title}.svg"
+              src="./assets/images/icon-${(item.title).toLowerCase()}.svg"
               alt=""
               class="background-img"
             />
@@ -115,6 +115,3 @@ buttons.map((button) => button.addEventListener("click", () =>
 }
 }
 ))
-
-
-
