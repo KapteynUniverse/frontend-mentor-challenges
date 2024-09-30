@@ -1,0 +1,286 @@
+@font-face {
+  font-family: Rubik;
+  src: local("Rubik"), url("./assets/fonts/Rubik-VariableFont_wght.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+:root {
+  /* Primary */
+  --blue: hsl(246, 80%, 60%);
+
+  --red-work: hsl(15, 100%, 70%);
+  --blue-play: hsl(195, 74%, 62%);
+  --red-study: hsl(348, 100%, 68%);
+  --green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --orange-care: hsl(43, 84%, 65%);
+  /* Neutral */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --fs-p: 1rem;
+  --fw-300: 300;
+  --fw-500: 500;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: Rubik;
+  font-size: var(--fs-p);
+  min-height: 100dvh;
+  background-color: var(--very-dark-blue);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.dashboard {
+  margin-block: 2em;
+  width: 80%;
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card,
+.user-section {
+  background-color: var(--dark-blue);
+  color: white;
+  margin-top: 3em;
+  padding: 1em;
+  border-radius: 1em;
+  position: relative;
+}
+
+.card:hover {
+  background-color: var(--desaturated-blue);
+  cursor: pointer;
+}
+
+.options:hover {
+  scale: 1.5;
+  transition: ease-in 0.2s;
+}
+
+.user-section {
+  padding: 0;
+  margin-top: 0;
+}
+
+.profile-picture {
+  border: 2px solid white;
+  border-radius: 100%;
+}
+
+.user {
+  background-color: var(--blue);
+  justify-content: flex-start;
+}
+
+.user,
+.schedule {
+  padding: 1em;
+  border-radius: inherit;
+}
+
+.username {
+  margin-left: 1.5em;
+}
+
+.schedule {
+  color: var(--desaturated-blue);
+}
+.schedule > p:hover {
+  color: var(--pale-blue);
+  cursor: pointer;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  top: -35%;
+  z-index: -1;
+  border-radius: 1em 1em 0 0;
+  justify-content: flex-end;
+}
+
+.background-img {
+  width: 4em;
+  margin-right: 1em;
+}
+
+/* aimed styles */
+
+#weekly {
+  color: white;
+}
+
+.work-red {
+  background-color: var(--red-work);
+}
+.play-blue {
+  background-color: var(--blue-play);
+}
+.study-red {
+  background-color: var(--red-study);
+}
+.exercise-green {
+  background-color: var(--green-exercise);
+}
+.social-violet {
+  background-color: var(--violet-social);
+}
+.self-care-orange {
+  background-color: var(--orange-care);
+}
+
+.small-text {
+  font-size: 0.625rem;
+  color: var(--pale-blue);
+}
+.medium-text {
+  font-size: 0.875rem;
+  font-weight: var(--fw-300);
+}
+.big-text {
+  font-size: 1.5rem;
+  font-weight: var(--fw-300);
+}
+
+@media screen and (min-width: 37.5em) and (max-width: 65em) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+  .user-section {
+    grid-column: 1/3;
+  }
+}
+
+@media screen and (min-width: 65em) {
+  .small-text {
+    font-size: 0.75rem;
+    color: var(--pale-blue);
+  }
+  .medium-text {
+    font-size: 1rem;
+  }
+  .big-text {
+    font-size: 2.5rem;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+  }
+  .user-section {
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+  }
+  .user {
+    flex: 1;
+    padding: 2em;
+    line-height: 1.1;
+    justify-content: space-evenly;
+  }
+
+  .profile-picture {
+    min-height: 4em;
+  }
+
+  .username {
+    margin: 0;
+  }
+
+  .username h1 {
+    font-size: 2.5rem;
+  }
+
+  .card,
+  .schedule {
+    padding-inline: 2em;
+  }
+
+  .hours,
+  .user,
+  .schedule {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+  .hours {
+    margin-top: 1em;
+  }
+  .exercise-green {
+    height: 4em;
+  }
+}
