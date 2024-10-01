@@ -1,0 +1,285 @@
+@font-face {
+  font-family: Space-Mono;
+  src: local("Space Mono"), url("./assets/fonts/SpaceMono-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+:root {
+  /* Primary */
+  --primary-strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --fs-p: 1.5rem;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+/* Layout */
+
+body {
+  font-family: Space-Mono;
+  font-size: var(--fs-p);
+  min-height: 100dvh;
+  background-color: var(--light-grayish-cyan);
+}
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tip-calculator {
+  background-color: var(--white);
+  padding: 1em 0;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 20em;
+  max-width: 45em;
+}
+.input-section,
+.result-section {
+  width: 90%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+}
+
+.result-section {
+  padding: 1.5em 1em 1em 1em;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+/* STYLES */
+.title {
+  font-size: 1.5rem;
+  color: var(--very-dark-cyan);
+  letter-spacing: 0.5em;
+  margin-block: 1.5em;
+}
+
+p {
+  color: var(--grayish-cyan);
+  font-size: 1rem;
+}
+
+.bill,
+.tip,
+.people {
+  margin-bottom: 1em;
+}
+
+.bill > p,
+.tip > p,
+.people > p {
+  margin-bottom: 0.75em;
+}
+
+input {
+  background-color: var(--very-light-cyan);
+  text-align: right;
+  padding: 1em;
+  outline: none;
+  color: var(--very-dark-cyan);
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  border: 0.125em solid var(--primary-strong-cyan);
+}
+
+input:invalid {
+  border: 0.125em solid tomato;
+}
+
+.number::placeholder {
+  color: var(--light-grayish-cyan);
+}
+
+.bill,
+.people {
+  position: relative;
+}
+
+.bill:before,
+.people::before {
+  content: "";
+  position: absolute;
+  left: 0.5em;
+  top: 60%;
+  bottom: 0;
+  width: 20px;
+  background: url("./assets/images/icon-dollar.svg");
+  background-repeat: no-repeat;
+}
+.people::before {
+  background: url("./assets/images/icon-person.svg");
+  background-repeat: no-repeat;
+}
+
+button {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  cursor: pointer;
+}
+
+input,
+button {
+  border: none;
+  width: 100%;
+  border-radius: 0.25em;
+  padding-block: 0.25em;
+}
+
+.result-section {
+  background-color: var(--very-dark-cyan);
+  border-radius: 0.75em;
+}
+
+.amount__text {
+  color: var(--very-light-cyan);
+}
+
+.amount__sub-text {
+  font-size: 0.75rem;
+}
+
+.amount__number {
+  font-size: 2rem;
+  color: var(--primary-strong-cyan);
+}
+.amount__button {
+  background-color: var(--primary-strong-cyan);
+  color: var(--very-dark-cyan);
+  font-size: 1.25rem;
+}
+
+.flex-default {
+  display: flex; /* Enable flexbox on the parent */
+  justify-content: space-between; /* Space out children */
+}
+.invalid {
+  color: tomato;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  .title {
+    margin-bottom: 3em;
+  }
+  .tip-calculator {
+    flex-direction: row;
+    padding: 1.25em 1.25em 1.25em 1.75em;
+    align-items: stretch;
+    gap: 2em;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .result-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5em;
+  }
+  .wrapper {
+    margin-bottom: 1em;
+  }
+  .custom {
+    text-align: center;
+  }
+}

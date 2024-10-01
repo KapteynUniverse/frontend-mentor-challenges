@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="title">
+        SPLI <br />
+        TTER
+      </h1>
+      <form class="tip-calculator">
+        <section class="input-section">
+          <div class="bill">
+            <p class="flex-default">
+              Bill <span class="invalid hidden">Can't be zero</span>
+            </p>
+
+            <input
+              id="bill"
+              type="number"
+              placeholder="0"
+              class="number"
+              min="0.01"
+              step="0.01"
+              value=""
+            />
+          </div>
+          <div class="tip">
+            <p>Select Tip %</p>
+            <div class="grid">
+              <button data-value="5">5%</button>
+              <button data-value="10">10%</button>
+              <button data-value="15">15%</button>
+              <button data-value="25">25%</button>
+              <button data-value="50">50%</button>
+              <input
+                id="custom"
+                type="number"
+                placeholder="Custom"
+                min="0"
+                step="0.01"
+                class="custom"
+                value=""
+              />
+            </div>
+          </div>
+          <div class="people">
+            <p class="flex-default">
+              Number of People <span class="invalid hidden">Can't be zero</span>
+            </p>
+            <input
+              id="people"
+              type="number"
+              placeholder="0"
+              class="number"
+              min="1"
+              value=""
+            />
+          </div>
+        </section>
+        <section class="result-section">
+          <div>
+            <div class="wrapper">
+              <div class="amount">
+                <p class="amount__text">Tip Amount</p>
+                <p class="amount__sub-text">/ person</p>
+              </div>
+              <p id="tip-per-person" class="amount__number">$0.00</p>
+            </div>
+            <div class="wrapper">
+              <div class="amount">
+                <p class="amount__text">Total</p>
+                <p class="amount__sub-text">/ person</p>
+              </div>
+              <p id="total-per-person" class="amount__number">$0.00</p>
+            </div>
+          </div>
+          <button class="amount__button" data-value="reset">RESET</button>
+        </section>
+      </form>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
