@@ -94,6 +94,7 @@ main {
   color: var(--light-grey);
   border-radius: 1em;
   padding: 1.5em;
+  max-width: 90%;
 }
 
 h1 {
@@ -168,10 +169,4 @@ button:hover {
   height: 5em;
   width: 6em;
   align-self: center;
-}
-@media screen and (max-width: 400px) {
-  .card {
-    height: 25em;
-    width: 21em;
-  }
 }
