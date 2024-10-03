@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hidden">
+      <h1>WEBSITE</h1>
+    </header>
+    <main class="main">
+      <form name="contactForm" autocomplete="on" class="contact-form">
+        <h2>Contact Us</h2>
+        <div class="full-name flex-pc-row">
+          <div class="fname flex-col gap">
+            <label for="fname">First Name <span class="star">*</span></label>
+            <input
+              type="text"
+              id="fname"
+              name="fname"
+              required
+              autofocus
+              aria-invalid="true"
+              aria-describedby="fname-error"
+            />
+            <span id="fname-error" class="error-message"
+              >This field is required</span
+            >
+          </div>
+          <div class="lname flex-col gap">
+            <label for="lname">Last Name <span class="star">*</span></label>
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              required
+              aria-invalid="true"
+              aria-describedby="lname-error"
+            />
+            <span id="lname-error" class="error-message"
+              >This field is required</span
+            >
+          </div>
+        </div>
+        <div class="email flex-col gap">
+          <label for="email">Email Address <span class="star">*</span></label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            aria-invalid="true"
+            aria-describedby="email-error"
+          />
+          <span id="email-error" class="error-message"
+            >Please enter a valid email address</span
+          >
+        </div>
+        <div class="query gap">
+          <label for="query">Query Type <span class="star">*</span></label>
+          <div class="flex-pc-row">
+            <div class="radio gap">
+              <input
+                type="radio"
+                name="query"
+                id="general-enquiry"
+                name="query"
+                value="General"
+                aria-invalid="true"
+                aria-describedby="query-error"
+                required
+              />
+              <label for="general-enquiry">General Enquiry</label>
+            </div>
+            <div class="radio gap">
+              <input
+                type="radio"
+                name="query"
+                id="support-request"
+                name="query"
+                value="Support"
+                aria-invalid="true"
+                aria-describedby="query-error"
+                required
+              />
+              <label for="support-request">Support Request</label>
+            </div>
+          </div>
+          <span id="query-error" class="error-message"
+            >Please select a query type</span
+          >
+        </div>
+        <div class="message flex-col gap">
+          <label for="message">Message <span class="star">*</span></label>
+          <textarea
+            name="message"
+            id="message"
+            required
+            maxlength="255"
+            aria-invalid="true"
+            aria-describedby="message-error"
+          ></textarea>
+          <span id="message-error" class="error-message"
+            >This field is required</span
+          >
+        </div>
+        <div class="checkbox gap">
+          <div class="flex-row">
+            <input
+              type="checkbox"
+              name="consent"
+              id="consent"
+              required
+              aria-invalid="true"
+              aria-describedby="checkbox-error"
+            />
+            <label for="consent" class="consent">
+              I consent to being contacted by the team
+              <span class="star">*</span></label
+            >
+          </div>
+          <span id="checkbox-error" class="error-message"
+            >To submit this form, please consent to being contacted</span
+          >
+        </div>
+        <button class="submit-btn" aria-haspopup="dialog" aria-expanded="false">
+          Submit
+        </button>
+
+        <section id="success" class="success hidden">
+          <h3>Message Sent!</h3>
+          <p>Thanks for completing the form. We'll be in touch soon!</p>
+        </section>
+      </form>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
