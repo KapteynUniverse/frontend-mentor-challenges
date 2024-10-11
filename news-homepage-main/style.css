@@ -162,6 +162,7 @@ a:hover {
   background-color: var(--off-white);
   flex-direction: column;
   justify-content: flex-start;
+  animation: slide 1s ease-out forwards;
 }
 
 .navbar__img {
@@ -370,5 +371,14 @@ a:hover {
 @media screen and (min-width: 62.5rem) {
   .trending__article img {
     display: block;
+  }
+}
+
+@keyframes slide {
+  0% {
+    right: -65%;
+  }
+  100% {
+    right: 0%;
   }
 }
