@@ -119,7 +119,8 @@ button {
   background: transparent;
 }
 
-p {
+p,
+.navbar__list li {
   color: var(--dark-grayish-blue);
 }
 
