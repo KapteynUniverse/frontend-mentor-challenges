@@ -231,6 +231,10 @@ a:hover {
   color: var(--off-white);
 }
 
+.new__article p {
+  color: var(--grayish-blue);
+}
+
 /* Trending */
 
 .trending__article {
