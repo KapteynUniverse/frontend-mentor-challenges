@@ -119,6 +119,10 @@ button {
   background: transparent;
 }
 
+p {
+  color: var(--dark-grayish-blue);
+}
+
 /* Active states */
 
 .navbar__img,
@@ -225,10 +229,6 @@ a:hover {
 
 .new__article a {
   color: var(--off-white);
-}
-
-.new__article p {
-  color: var(--grayish-blue);
 }
 
 /* Trending */
