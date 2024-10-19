@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Outfit;
+  src: local("Outfit"), url("./assets/fonts/Outfit-VariableFont_wght.ttf");
+  font-display: swap;
+  font-weight: 400;
+}
+
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg-blue: hsl(217, 54%, 11%);
+  --card-bg-blue: hsl(216, 50%, 16%);
+  --line-blue: hsl(215, 32%, 27%);
+  --fs-p: 1.125rem;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-600: 600;
+}
