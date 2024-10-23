@@ -1,0 +1,449 @@
+@font-face {
+  font-family: Josefin;
+  src: local("Josefin"), url("./assets/fonts/JosefinSans-Light.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: Alata;
+  src: local("Alata"), url("./assets/fonts/Alata-Regular.ttf");
+  font-display: swap;
+}
+:root {
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --fs-p: 0.9375rem;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  max-width: 65ch;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Personal preferences */
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* BASE STYLES */
+
+/* GENERAL STYLING */
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Alata;
+  font-size: var(--fs-p);
+  text-align: center;
+}
+
+header {
+  background-image: url("./assets/images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 40rem;
+  padding-top: 2.5rem;
+}
+
+main {
+  display: grid;
+  padding-block: 5rem;
+}
+
+footer {
+  background-color: var(--black);
+  padding-block: 2.5rem;
+  color: var(--white);
+}
+
+h1 {
+  border: 2px solid var(--white);
+  color: var(--white);
+  font-size: 2.5rem;
+  text-align: start;
+  padding: 1.25rem 1.75rem;
+  max-width: 25rem;
+  margin-top: 8.5rem;
+}
+
+h2 {
+  margin-block: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Josefin;
+  line-height: 1;
+}
+
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+h1,
+h3 {
+  font-weight: inherit;
+}
+
+/* HEADER */
+
+.header__nav {
+  z-index: 999;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.header__nav-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+.header__upper-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-list {
+  color: var(--white);
+  background-color: var(--black);
+  text-align: start;
+  display: none;
+}
+
+/* MAIN */
+
+.main__headline-section {
+  padding: 1.5rem;
+}
+
+.main__headline-sub-title {
+  color: var(--very-dark-gray);
+}
+
+.main__creations {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.main__creations picture {
+  position: relative;
+}
+
+.main__creations picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75), transparent);
+}
+
+.main__creations > a:not(:last-child) {
+  position: relative;
+}
+
+.main__creations-title {
+  color: var(--white);
+  position: absolute;
+  bottom: 17.5%;
+  left: 7.5%;
+  max-width: 9ch;
+  text-align: start;
+}
+
+.narrow {
+  max-width: 7ch;
+}
+
+.main__creations-btn {
+  border: 2px solid var(--black);
+  padding: 0.75rem 3.75rem;
+  letter-spacing: 0.25rem;
+}
+
+/* FOOTER */
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer__list {
+  margin-block: 1.5rem;
+}
+
+.footer__list > li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.footer__title {
+  color: var(--dark-gray);
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 40rem) {
+  /* GENERAL STYLING */
+
+  .wrapper {
+    max-width: 85%;
+  }
+
+  header {
+    background-image: url("./assets/images/desktop/image-hero.jpg");
+  }
+
+  h1 {
+    font-size: 4rem;
+    padding: 1.75rem 2.25rem;
+    max-width: 45rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* HEADER */
+
+  .hamburger {
+    display: none;
+  }
+
+  .header__nav-section {
+    flex-direction: row;
+  }
+
+  .header__nav-list {
+    display: flex;
+    gap: 2rem;
+    background-color: transparent;
+  }
+
+  /* MAIN */
+
+  .main__headline {
+    position: relative;
+  }
+
+  .main__headline-section {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    background-color: var(--white);
+    padding: 2rem 0 0 2rem;
+    text-align: start;
+    max-width: 29rem;
+  }
+
+  .main__creations {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: min-content;
+    align-items: center;
+  }
+
+  .main__creations > h2 {
+    grid-column: 1/3;
+    justify-self: start;
+  }
+
+  .main__creations-btn {
+    grid-row: 1;
+    grid-column: 3 / 4;
+    justify-self: end;
+  }
+
+  .main__creations-title {
+    bottom: 5%;
+    left: 17.5%;
+  }
+
+  /* FOOTER */
+
+  .footer__nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer__list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 65rem) {
+  /* GENERAL STYLING */
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  /* MAIN */
+
+  .main__creations {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .main__creations > h2 {
+    grid-column: 1/4;
+  }
+
+  .main__creations-btn {
+    grid-column: 4 / 5;
+  }
+}
+
+/* Hover effects */
+
+/* List items */
+
+li a {
+  display: inline-block;
+  position: relative;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  background-color: var(--white);
+  opacity: 0;
+}
+
+li a:hover::after {
+  opacity: 1;
+  animation-name: borderAnimation;
+  animation-duration: 0.5s;
+}
+
+@keyframes borderAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Creations */
+
+/* Button */
+
+.main__creations-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+  transition: 0.5s;
+}
+
+/* Images */
+
+a:hover picture {
+  opacity: 0.3;
+  transition: 2s;
+}
+
+a:hover .main__creations-title {
+  color: var(--black);
+  transition: 2s;
+}
