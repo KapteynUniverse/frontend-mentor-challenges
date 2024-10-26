@@ -4,9 +4,12 @@
   --grey-700: hsl(0, 0%, 20%);
   --grey-800: hsl(0, 0%, 12%);
   --grey-900: hsl(0, 0%, 8%);
-  --font-size-p: 14px;
+  --font-size-p: 0.875rem;
 }
 
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
 *,
 *::before,
 *::after {
@@ -17,93 +20,121 @@
   margin: 0;
 }
 
-html {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+html,
+body {
+  height: 100%;
 }
 
 body {
-  min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--grey-900);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-main {
-  height: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
   width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--font-size-p);
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: var(--grey-900);
+  color: var(--white);
 }
 
 .card {
   background-color: var(--grey-800);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-}
-
-.card > * {
-  margin-bottom: 10px;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
 img {
-  border-radius: 50%;
-  height: 35%;
-  width: 35%;
-  align-self: center;
-}
-
-p {
-  font-size: var(--font-size-p);
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
 }
 
 h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
   font-weight: 700;
-  font-size: 1.55em;
-}
-
-h2,
-p {
-  color: var(--white);
-  text-align: center;
 }
 
 .location {
   color: var(--green);
-  font-weight: 600;
 }
 
 .sub-text {
+  margin-block: 1.5rem;
   font-weight: 400;
-  margin-block: 20px;
 }
 
-button {
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+li {
   background-color: var(--grey-700);
-  color: var(--white);
-  border-radius: 5px;
-  border: none;
-  font-size: 1em;
-  padding-block: 8px;
-  font-weight: 600;
-  font: inherit;
+  border-radius: 0.5rem;
+  padding-block: 0.5rem;
+  &:hover,
+  &:focus-within {
+    background-color: var(--green);
+    cursor: pointer;
+  }
 }
 
-button:hover {
-  cursor: pointer;
-  background-color: var(--green);
-  color: var(--grey-900);
-  caret-color: red;
+a {
+  text-decoration: none;
+  color: var(--white);
 }
-@media screen and (max-width: 375px) {
-  .card {
-    padding: 12px;
-  }
+
+li:hover a {
+  color: var(--grey-700);
+}
+
+li:focus-within a {
+  color: var(--grey-700);
+  outline: none;
 }
