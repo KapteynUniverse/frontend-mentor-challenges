@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sneakers company official webpage" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper flex">
+        <nav class="flex" aria-label="Main Navigation">
+          <button class="mobile-only" aria-label="Open side navigation menu" aria-hidden="false" id="open-nav" aria-controls="side-nav">
+            <img
+              
+              src="./assets/images/icon-menu.svg"
+              alt=""
+              width="16"
+              height="15"
+            />
+          </button>
+          <a href="#" class="logo"
+            ><img
+              src="./assets/images/logo.svg"
+              alt="Sneakers home page"
+              width="138"
+              height="20"
+              aria-current="page"
+          /></a>
+     
+          <ul id="side-nav" class="desktop-only side-nav" aria-hidden="true" aria-expanded="false">
+            <li><button aria-label="Close side navigation menu" id="close-nav" aria-controls="side-nav">
+              <img
+                
+                class="mobile-only" 
+                src="./assets/images/icon-close.svg"
+                alt=""
+                width="14"
+                height="15"
+              />
+            </button></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__right flex">
+          <button id="basket-btn" aria-label="Open dropdown basket" aria-controls="cart-modal">
+            <img
+              src="./assets/images/icon-cart.svg"
+              alt=""
+              width="22"
+              height="20"
+            />
+            <p id="basket-count"></p>
+          </button>
+          <!--I was going to change this to anchor tag but it was final stage of the development and i didn't want to break anything. Consider this as a menu dropdown-->
+          <button aria-label="Open dropdown menu">
+            <img
+              src="./assets/images/image-avatar.png"
+              alt=""
+              width="25"
+              height="25"
+              class="avatar"
+            />
+          </button>
+        </div>
+      </div>
+
+      <!-- MODAL -->
+      <div id="cart-modal" class="modal-basket hidden" aria-labelledby="cart-title" aria-hidden="true" aria-expanded="false">
+        <p id="cart-title">Cart</p>
+        <div id="basket-filled">
+        <div  class="added-items">
+          <p>Your cart is empty</p>
+        </div>
+      </div> 
+    </header>
+    <main>
+      <div class="wrapper">
+        <h1 class="sr-only">SNEAKERS</h1>
+        <article class="product flex">
+          <div class="product__imgs">
+            <div class="product__main-img">
+              <button id="prev-btn" class="mobile-only prev-btn" aria-label="Click to see previous image">
+                <img
+                  src="./assets/images/icon-previous.svg"
+                  alt=""
+                  width="14"
+                  height="14"
+                />
+              </button>
+              <img
+                id="item-img"
+                src="./assets/images/image-product-1.jpg"
+                alt="Image of the Sneaker brand white shoes with some beige on the sides"
+                aria-controls="modal-img-prev"
+              />
+              <button id="next-btn" class="mobile-only next-btn" aria-label="Click to see next image">
+                <img
+                  src="./assets/images/icon-next.svg"
+                  alt=""
+                  width="14"
+                  height="14"
+                />
+
+              </button>
+            </div>
+            <ul class="product__thumbnails desktop-only">
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    id="image-product-1"
+                    name="product-thumbnail-img"
+                    aria-label="Select to see first product image"
+                  />
+                  <img
+                    src="./assets/images/image-product-1-thumbnail.jpg"
+                    alt=""
+                  />
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    id="image-product-2"
+                    name="product-thumbnail-img"
+                    aria-label="Select to see second product image"
+                  />
+                  <img
+                    src="./assets/images/image-product-2-thumbnail.jpg"
+                    alt=""
+                  />
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    id="image-product-3"
+                    name="product-thumbnail-img"
+                    aria-label="Select to see third product image"
+                  />
+                  <img
+                    src="./assets/images/image-product-3-thumbnail.jpg"
+                    alt=""
+                  />
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    id="image-product-4"
+                    name="product-thumbnail-img"
+                    aria-label="Select to see fourth product image"
+                  />
+                  <img
+                    src="./assets/images/image-product-4-thumbnail.jpg"
+                    alt=""
+                  />
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="product__text-section">
+            <hgroup>
+              <p class="product__ribbon">Sneaker Company</p>
+              <h2 class="product__text">Fall Limited Edition Sneakers</h2>
+              <p class="product__sub-text">
+                These low-profile sneakers are your perfect casual wear
+                companion. Featuring a durable rubber outer sole, they'll
+                withstand everything the weather can offer.
+              </p>
+            </hgroup>
+            <div class="product__price flex">
+              <dl class="product__current-price flex">
+                <dt class="sr-only">Current price:</dt>
+                <dd class="current-price">$125.00</dd>
+                <dt class="sr-only">Discount:</dt>
+                <dd class="discount">50%</dd>
+              </dl>
+              <dl class="product__old-price">
+                <dt class="sr-only">Old price:</dt>
+                <dd class="old-price">$250.00</dd>
+              </dl>
+            </div>
+            <form id="form" class="product__buttons flex">
+              <fieldset class="quantity flex">
+                <legend class="sr-only">Quantity:</legend>
+                <button id="decrease-btn" type="button" aria-label="Decrease the number of items you want">
+                  <img
+                    src="./assets/images/icon-minus.svg"
+                    alt=""
+                    width="12"
+                    height="4"
+                  />
+                </button>
+                <label for="number-of-items" class="sr-only"
+                >Enter the number of items you want</label
+              > 
+                <input type="number" id="number-of-items" value="0" min="1"/> 
+                <button id="increase-btn" type="button" aria-label="Increase the number of items you want">
+                  <img
+                    src="./assets/images/icon-plus.svg"
+                    alt=""
+                    width="12"
+                    height="12"
+                  />
+                </button>
+              </fieldset>
+              <div class="cart">
+                <button id="add-to-basket" type="submit">Add to cart</button>
+              </div>
+            </form> 
+          </div>
+        </article>
+      </div>
+
+      <!-- MODAL -->
+      <div id="modal-img-prev" class="modal-lightbox flex desktop-only hidden" aria-labelledby="modal-image-title" aria-hidden="true" aria-expanded="false">
+        <h2 id="modal-image-title" class="sr-only">Image Preview Modal</h2>
+        <div class="product__imgs">
+          <div class="product__main-img">        
+            <button id="close-img-modal" class="close-btn" aria-label="Close lightbox modal" aria-controls="modal-img-prev">
+              <img
+                src="./assets/images/icon-close.svg"
+                alt=""
+                width="14"
+                height="15"
+              />
+            </button>
+            <button id="modal-prev-btn" class="prev-btn" aria-label="Click to see previous image">
+              <img
+                src="./assets/images/icon-previous.svg"
+                alt=""
+                width="14"
+                height="14"
+              />
+            </button>
+            <img
+              id="item-img-modal"
+              src="./assets/images/image-product-1.jpg"
+              alt="Sneaker brand brown and white shoe preview image"
+            />
+            <button id="modal-next-btn" class="next-btn" aria-label="Click to see next image">
+              <img
+                src="./assets/images/icon-next.svg"
+                alt=""
+                width="14"
+                height="14"
+              />
+            </button>
+          </div>
+          <ul
+            class="product__thumbnails product__thumbnails-modal desktop-only"
+          >
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  id="modal-image-product-1"
+                  name="product-thumbnail-img-modal"
+                  aria-label="Select to see first product image"
+                />
+                <img
+                  src="./assets/images/image-product-1-thumbnail.jpg"
+                  alt=""
+                />
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  id="modal-image-product-2"
+                  name="product-thumbnail-img-modal"
+                  aria-label="Select to see second product image"
+                />
+                <img
+                  src="./assets/images/image-product-2-thumbnail.jpg"
+                  alt=""
+                />
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  id="modal-image-product-3"
+                  name="product-thumbnail-img-modal"
+                  aria-label="Select to see third product image"
+                />
+                <img
+                  src="./assets/images/image-product-3-thumbnail.jpg"
+                  alt=""
+                />
+              </label>
+            </li>
+            <li>
+              <label>
+                <input
+                  type="radio"
+                  id="modal-image-product-4"
+                  name="product-thumbnail-img-modal"
+                  aria-label="Select to see fourth product image"
+                />
+                <img
+                  src="./assets/images/image-product-4-thumbnail.jpg"
+                  alt=""
+                />
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
