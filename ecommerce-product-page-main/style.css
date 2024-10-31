@@ -488,6 +488,14 @@ progress::-webkit-progress-value {
     cursor: pointer;
   }
 
+  progress::-webkit-progress-bar {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  progress::-webkit-progress-value {
+    border-radius: 0 10px 10px 10px;
+  } 
+
   .product__text-section {
     padding: 2rem;
     align-self: stretch;
