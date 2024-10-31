@@ -327,6 +327,23 @@ header {
   right: 0;
 }
 
+progress {
+  width: 100%;
+  appearance: none;
+  position: absolute;
+  bottom: 0;
+}
+
+progress::-webkit-progress-bar {
+  background-color: var(--light-grayish-blue);
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, var(--pale-orange), var(--orange));
+  border-radius: 0 10px 10px 0; 
+  transition: width .7s ease; 
+} 
+
 .product__text-section {
   padding: 1.5rem;
 }
