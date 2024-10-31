@@ -63,7 +63,7 @@
               width="22"
               height="20"
             />
-            <p id="basket-count"></p>
+            <span id="basket-count"></span>
           </button>
           <!--I was going to change this to anchor tag but it was final stage of the development and i didn't want to break anything. Consider this as a menu dropdown-->
           <button aria-label="Open dropdown menu">
@@ -79,7 +79,7 @@
       </div>
 
       <!-- MODAL -->
-      <div id="cart-modal" class="modal-basket hidden" aria-labelledby="cart-title" aria-hidden="true" aria-expanded="false">
+      <div id="cart-modal" class="modal-basket hidden" aria-labelledby="cart-title" aria-hidden="true" aria-expanded="false" role="dialog">
         <p id="cart-title">Cart</p>
         <div id="basket-filled">
         <div  class="added-items">
@@ -233,7 +233,7 @@
       </div>
 
       <!-- MODAL -->
-      <div id="modal-img-prev" class="modal-lightbox flex desktop-only hidden" aria-labelledby="modal-image-title" aria-hidden="true" aria-expanded="false">
+      <div id="modal-img-prev" class="modal-lightbox flex desktop-only hidden" aria-labelledby="modal-image-title" aria-hidden="true" aria-expanded="false" role="dialog">
         <h2 id="modal-image-title" class="sr-only">Image Preview Modal</h2>
         <div class="product__imgs">
           <div class="product__main-img">        
