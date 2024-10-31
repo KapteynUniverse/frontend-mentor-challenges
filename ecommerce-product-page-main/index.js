@@ -27,6 +27,7 @@ window.onload = function () {
   if (w <= 880) {
     nav.classList.add("side-nav");
     nav.classList.remove("desktop-only");
+    closeNav.tabIndex = "0";
   } else {
     nav.classList.remove("side-nav");
     nav.ariaHidden = "false";
@@ -45,6 +46,7 @@ function resetStyleOnWindowSize() {
     nav.ariaHidden = "false";
     nav.ariaExpanded = "";
     openNav.ariaHidden = "true";
+    closeNav.tabIndex = "0";
   } else {
     nav.classList.remove("desktop-only");
     nav.classList.add("side-nav");
