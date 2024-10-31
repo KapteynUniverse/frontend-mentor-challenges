@@ -101,11 +101,13 @@ const itemImg = document.getElementById("item-img");
 const itemImgModal = document.getElementById("item-img-modal");
 const radios = document.querySelectorAll("input");
 const path = "./assets/images/";
+const progressBar = document.querySelector("progress");
 
 radios.forEach((item) => {
   item.addEventListener("click", () => {
     if (item.name === "product-thumbnail-img") {
       itemImg.src = `${path}${item.id}.jpg`;
+      progressBar.value = item.id.slice(14);
     } else if (item.name === "product-thumbnail-img-modal") {
       itemImgModal.src = `${path}${item.id.slice(6)}.jpg`;
     }
@@ -142,6 +144,7 @@ buttons.forEach((button) => {
       case "prev-btn":
         changeX("decrease");
         updateImage(itemImg, x);
+        progressBar.value = x;
         break;
       case "modal-prev-btn":
         changeX("decrease");
@@ -150,6 +153,7 @@ buttons.forEach((button) => {
       case "next-btn":
         changeX("increase");
         updateImage(itemImg, x);
+        progressBar.value = x;
         break;
       case "modal-next-btn":
         changeX("increase");
