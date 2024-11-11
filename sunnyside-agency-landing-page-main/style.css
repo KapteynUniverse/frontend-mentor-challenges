@@ -295,6 +295,20 @@ nav > .flex {
   margin-inline: clamp(1.5rem, 0.972rem + 2.254vw, 3rem); /* 24-48 */
 }
 
+.arrow {
+  animation: upDown 2s infinite;
+  transform-origin: center;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
 .modal-nav {
   display: none;
   position: relative;
