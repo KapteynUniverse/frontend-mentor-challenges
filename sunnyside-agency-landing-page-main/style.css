@@ -378,6 +378,7 @@ section:has(h2) > div > p {
 
 section:has(h2) a {
   position: relative;
+  max-width: fit-content;
 }
 section:has(h2) a::after {
   content: "";
