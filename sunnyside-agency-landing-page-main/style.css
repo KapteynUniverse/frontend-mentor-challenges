@@ -497,6 +497,11 @@ section:has(h3):nth-of-type(2) {
   padding-inline: var(--pf-inline);
 }
 
+.footer__nav > .logo-link {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(19%) saturate(1000%)
+    hue-rotate(123deg) brightness(85%) contrast(87%);
+}
+
 .footer__links,
 .footer__socials {
   display: flex;
