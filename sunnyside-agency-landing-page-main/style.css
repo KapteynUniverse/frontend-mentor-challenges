@@ -28,7 +28,6 @@
   --dark-grayish-blue: hsl(232, 10%, 55%);
   --very-dark-grayish-blue: hsl(213, 9%, 39%);
   --very-dark-des-blue: hsl(212, 27%, 19%);
-  --cream-bg: hsl(34, 100%, 99%);
 
   /* FONT SIZES */
 
@@ -478,11 +477,6 @@ section:has(h3):nth-of-type(2) {
 
 .testimonials img {
   border-radius: 100%;
-}
-
-section:has(h2),
-section:has(h4) {
-  background-color: var(--cream-bg);
 }
 
 /* FOOTER */
