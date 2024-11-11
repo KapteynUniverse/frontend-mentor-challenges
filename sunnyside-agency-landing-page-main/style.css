@@ -14,7 +14,6 @@
 
 :root {
   /* COLORS */
-
   /* PRIMARY */
   --soft-red: hsl(7, 99%, 70%);
   --yellow: hsl(51, 100%, 49%);
@@ -53,7 +52,6 @@
   --fw-fraunces-700: 700;
 
   /* PADDING SPACING */
-
   /* TRANSFORM-STAND OUT */
 
   --p-block: clamp(4rem, 1.931rem + 8.826vw, 9.875rem); /* 64-158 */
@@ -184,7 +182,6 @@ img {
 }
 
 /* BASE STYLES */
-
 /* GENERAL */
 
 .flex {
@@ -364,7 +361,6 @@ nav > .flex {
 }
 
 /* MAIN */
-
 /* TRANSFORM AND STAND OUT */
 
 section:has(h2) {
@@ -552,7 +548,6 @@ section:has(h3):nth-of-type(2) {
   }
 
   /* MAIN */
-
   /* TRANSFORM AND STAND OUT */
 
   section:has(h2) {
