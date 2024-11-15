@@ -1,0 +1,28 @@
+.earth::before,
+.moon::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.earth::before {
+  top: 2.8em;
+  right: 2.8em;
+  width: 3em;
+  height: 3em;
+  background: #287ab8;
+}
+
+/* .moon::before {
+  top: 0.8em;
+  right: 0.8em;
+  width: 1.2em;
+  height: 1.2em;
+  background: #6d77df;
+} */
+
+@keyframes nb {
+  to {
+    transform: rotate(360deg);
+  }
+}

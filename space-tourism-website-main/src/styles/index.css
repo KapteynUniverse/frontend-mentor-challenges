@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Barlow;
+  src: local("Barlow"), url("/assets/fonts/Barlow-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: BarlowCon;
+  src: local("Barlow"), url("/assets/fonts/BarlowCondensed-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: Bellefair;
+  src: local("Barlow"), url("/assets/fonts/Bellefair-Regular.ttf");
+  font-display: swap;
+}
+
+.custom-glass {
+  @apply shadow-lg backdrop-blur-md;
+  background: linear-gradient(
+    135deg,
+    rgba(208, 214, 249, 0.1),
+    rgba(208, 214, 249, 0)
+  );
+  box-shadow: 0 8px 32px rgba(11, 13, 23, 0.37);
+}
+
+body {
+  background: rgb(11, 13, 23);
+  font-family: Barlow;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2.5rem;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(1);
+}
+
+.active-link.radio-destination::after {
+  height: 2px;
+  bottom: -0.5rem;
+}
+
+@media screen and (max-width: 48rem) {
+  header .active-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: clamp(
+      10.57625rem,
+      -3.0893749999999986rem + 68.328125vw,
+      29.708125rem
+    );
+    width: 4px;
+    height: 100%;
+    background-color: white;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+
+  .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+  .planet {
+    animation: planet-rotate infinite 120s linear;
+  }
+
+  @keyframes logo-spin {
+    0% {
+      transform: rotate(0deg) scale(0.75);
+    }
+    50% {
+      transform: rotate(-180deg) scale(1.5);
+    }
+    to {
+      transform: rotate(-360deg) scale(0.75);
+    }
+  }
+
+  @keyframes planet-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .load {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
+  nav a,
+  a:has(span) {
+    position: relative;
+  }
+
+  nav a::after,
+  a:has(.radio-destination)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -8px;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  nav a::after {
+    bottom: -2.5rem;
+  }
+  nav a:hover::after,
+  a:has(.radio-destination):hover::after {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  .explore {
+    position: relative;
+  }
+
+  .explore::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: white;
+    opacity: 0;
+    transition: width 1s ease-in-out, height 1s ease-in-out,
+      opacity 1s ease-in-out;
+  }
+
+  .explore:hover::after {
+    opacity: 0.25;
+    width: calc(100% * 1.5);
+    height: calc(100% * 1.5);
+  }
+}
