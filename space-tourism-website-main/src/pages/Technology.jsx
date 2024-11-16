@@ -75,6 +75,7 @@ function Technology() {
                     ? `${selectedTechnology.images.alt}`
                     : "Photo of the WEB-X carrier rocket during liftoff"
                 }
+                loading="lazy"
                 className="w-[768px] max-w-h-[310px] lg:max-w-[608px] lg:max-w-h-[600px] lg:flex-1"
                 variants={imageVariants}
                 initial="initial"
