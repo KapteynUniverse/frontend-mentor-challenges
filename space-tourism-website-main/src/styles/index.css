@@ -120,7 +120,7 @@ body {
   }
 
   nav a,
-  a:has(span) {
+  a:has(label) {
     position: relative;
   }
 
