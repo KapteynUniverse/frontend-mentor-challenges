@@ -27,7 +27,7 @@ function Destination() {
     <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-mobile-bg-destination md:bg-tablet-bg-destination lg:bg-desktop-bg-destination text-white load">
       <Cursor />
       <Navigation />
-      <main className="max-w-screen-2xl mx-auto min-h-full flex flex-col lg:flex-row items-center justify-evenly px-generalInlineMT py-generalBlockMT md:px-generalInlineTD md:py-generalBlockTD">
+      <main className="max-w-screen-2xl mx-auto min-h-full flex flex-col lg:flex-row items-center justify-evenly text-center px-generalInlineMT py-generalBlockMT md:px-generalInlineTD md:py-generalBlockTD">
         <div>
           <h1 className="uppercase text-pagesH1MT md:text-pagesH1TD lg:mb-24 lg:text-left font-BarlowCon">
             <b className=" opacity-30">01</b> Pick your destination
