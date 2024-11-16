@@ -5,6 +5,7 @@ import Radio from "../components/Radio";
 import ErrorPage from "../pages/ErrorPage";
 import { motion } from "framer-motion";
 import Cursor from "../components/CustomCursor";
+import { horizontal, scale } from "../Utils/AnimationVariants";
 
 function Technology() {
   const { technologyName } = useParams();
@@ -17,17 +18,13 @@ function Technology() {
     return <ErrorPage />;
   }
 
-  const textVariants = {
-    initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 50 },
-  };
+  const textVariants = horizontal(50);
 
-  const imageVariants = {
-    initial: { opacity: 0, scale: 0.8 },
-    animate: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.8 },
-  };
+  const textVariants2 = horizontal(100);
+
+  const textVariants3 = horizontal(150);
+
+  const imageVariants = scale(0.8);
 
   return (
     <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-mobile-bg-technology md:bg-tablet-bg-technology lg:bg-desktop-bg-technology text-white load">
@@ -104,7 +101,7 @@ function Technology() {
                 </motion.h2>
                 <motion.h3
                   className="uppercase my-4 lg:mb-6 text-crewTechH3MT md:text-crewTechH3TD font-Bellefair"
-                  variants={textVariants}
+                  variants={textVariants2}
                   initial="initial"
                   animate="animate"
                   exit="exit"
@@ -114,7 +111,7 @@ function Technology() {
                 </motion.h3>
                 <motion.p
                   className="text-preset9 text-blue-white"
-                  variants={textVariants}
+                  variants={textVariants3}
                   initial="initial"
                   animate="animate"
                   exit="exit"
