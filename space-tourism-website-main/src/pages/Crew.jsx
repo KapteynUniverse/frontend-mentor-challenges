@@ -5,6 +5,7 @@ import { crew } from "../data/data.json";
 import ErrorPage from "../pages/ErrorPage";
 import { motion } from "framer-motion";
 import Cursor from "../components/CustomCursor";
+import { horizontal, vertical } from "../Utils/AnimationVariants";
 
 function CrewPage() {
   const { crewName } = useParams();
@@ -17,11 +18,13 @@ function CrewPage() {
     return <ErrorPage />;
   }
 
-  const variants = {
-    initial: { opacity: 0, y: 50 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 50 },
-  };
+  const variants = vertical(50);
+
+  const textVariants = horizontal(50);
+
+  const textVariants2 = horizontal(100);
+
+  const textVariants3 = horizontal(150);
 
   return (
     <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-mobile-bg-crew md:bg-tablet-bg-crew lg:bg-desktop-bg-crew text-white load">
@@ -43,15 +46,36 @@ function CrewPage() {
           <div className="text-center lg:text-left">
             <div className="mb-8 ">
               <hgroup>
-                <h2 className="uppercase text-crewTechH2MT opacity-30 md:text-crewTechH2TD font-Bellefair">
+                <motion.h2
+                  className="uppercase text-crewTechH2MT opacity-30 md:text-crewTechH2TD font-Bellefair"
+                  variants={textVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.8 }}
+                >
                   {selectedCrew.role}
-                </h2>
-                <h3 className="uppercase text-crewTechH3MT md:text-crewTechH3TD font-Bellefair">
+                </motion.h2>
+                <motion.h3
+                  className="uppercase text-crewTechH3MT md:text-crewTechH3TD font-Bellefair"
+                  variants={textVariants2}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.8 }}
+                >
                   {selectedCrew.name}
-                </h3>
-                <p className="text-preset9 text-blue-white mt-6 mb-12 lg:mb-24">
+                </motion.h3>
+                <motion.p
+                  className="text-preset9 text-blue-white mt-6 mb-12 lg:mb-24"
+                  variants={textVariants3}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.8 }}
+                >
                   {selectedCrew.bio}
-                </p>
+                </motion.p>
               </hgroup>
               <Radio
                 type="crew"
