@@ -44,6 +44,7 @@ function Destination() {
                   ? `${selectedPlanet.images.alt}`
                   : "A close image of the Moon during waning gibbous phase"
               }
+              loading="lazy"
               className="w-[150px] h-[150px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] planet"
               variants={variants}
               initial="initial"
