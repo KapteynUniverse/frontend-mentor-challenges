@@ -73,6 +73,7 @@ function CrewPage() {
                 ? `${selectedCrew.images.alt}`
                 : "Douglas Hurley fist bumping the air with a smile on his face"
             }
+            loading="lazy"
             className="w-[270px] h-[340px] md:w-[446px] md:h-[560px] lg:w-[540px] lg:h-[676px]"
             variants={{
               initial: { opacity: 0, scale: 0.8 },
