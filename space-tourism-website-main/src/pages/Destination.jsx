@@ -5,6 +5,7 @@ import { destinations } from "../data/data.json";
 import ErrorPage from "../pages/ErrorPage";
 import { motion } from "framer-motion";
 import Cursor from "../components/CustomCursor";
+import { vertical } from "../Utils/AnimationVariants";
 
 function Destination() {
   const { planetName } = useParams();
@@ -16,11 +17,11 @@ function Destination() {
     return <ErrorPage />;
   }
 
-  const variants = {
-    initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 50 },
-  };
+  const textVariants = vertical(50);
+
+  const textVariants2 = vertical(100);
+
+  const textVariants3 = vertical(200);
 
   return (
     <div className="min-h-screen bg-no-repeat bg-cover bg-center bg-mobile-bg-destination md:bg-tablet-bg-destination lg:bg-desktop-bg-destination text-white load">
@@ -46,7 +47,7 @@ function Destination() {
               }
               loading="lazy"
               className="w-[150px] h-[150px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] planet"
-              variants={variants}
+              variants={textVariants}
               initial="initial"
               animate="animate"
               exit="exit"
@@ -54,7 +55,7 @@ function Destination() {
             />
             <motion.div
               key={selectedPlanet.description}
-              variants={variants}
+              variants={textVariants}
               initial="initial"
               animate="animate"
               exit="exit"
@@ -67,13 +68,34 @@ function Destination() {
                 currentPage="dest"
               />
               <hgroup>
-                <h2 className="uppercase text-destH2MT md:text-destH2TD font-Bellefair">
+                <motion.h2
+                  className="uppercase text-destH2MT md:text-destH2TD font-Bellefair"
+                  variants={textVariants}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.5 }}
+                >
                   {selectedPlanet.name}
-                </h2>
-                <p className="text-preset9 py-6 max-w-prose text-blue-white border-b-2">
+                </motion.h2>
+                <motion.p
+                  className="text-preset9 py-6 max-w-prose text-blue-white border-b-2"
+                  variants={textVariants2}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.5 }}
+                >
                   {selectedPlanet.description}
-                </p>
-                <div className="flex flex-col gap-6 mt-6 md:flex-row md:justify-between">
+                </motion.p>
+                <motion.div
+                  className="flex flex-col gap-6 mt-6 md:flex-row md:justify-between"
+                  variants={textVariants3}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  transition={{ duration: 0.5 }}
+                >
                   <dl>
                     <dt className="uppercase text-preset7 text-blue-white mb-3 font-BarlowCon">
                       Avg. Distance
@@ -90,7 +112,7 @@ function Destination() {
                       {selectedPlanet.travel}
                     </dd>
                   </dl>
-                </div>
+                </motion.div>
               </hgroup>
             </motion.div>
           </div>
