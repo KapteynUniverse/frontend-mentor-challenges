@@ -45,9 +45,16 @@ function Radio({ legend, page, type, currentPage }) {
                 }
               />
 
+              {currentPage === "crew" ? (
+                <label htmlFor={item.name} className="sr-only">
+                  {item.name}
+                </label>
+              ) : null}
+
               {currentPage === "dest" ? (
-                <span
-                  className={`radio-destination font-BarlowCon ${
+                <label
+                  htmlFor={item.name}
+                  className={`radio-destination font-BarlowCon hover:cursor-pointer ${
                     location.pathname ===
                     `/${type}/${item.name.toLowerCase().replace(/\s+/g, "%20")}`
                       ? "active-link text-white"
@@ -57,12 +64,13 @@ function Radio({ legend, page, type, currentPage }) {
                   }`}
                 >
                   {item.name}
-                </span>
+                </label>
               ) : null}
 
               {currentPage === "tech" ? (
-                <span
-                  className={`text-crewTechH2MT md:text-crewTechH2TD w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full border hover:opacity-70 flex items-center justify-center ${
+                <label
+                  htmlFor={item.name}
+                  className={`text-crewTechH2MT md:text-crewTechH2TD w-10 h-10 md:w-14 md:h-14 lg:w-20 lg:h-20 rounded-full border hover:opacity-70 flex items-center justify-center hover:cursor-pointer ${
                     location.pathname ===
                     `/${type}/${item.name.toLowerCase().replace(/\s+/g, "%20")}`
                       ? "bg-white text-blue-black"
@@ -72,7 +80,7 @@ function Radio({ legend, page, type, currentPage }) {
                   }`}
                 >
                   {index + 1}
-                </span>
+                </label>
               ) : null}
             </Link>
           </div>
