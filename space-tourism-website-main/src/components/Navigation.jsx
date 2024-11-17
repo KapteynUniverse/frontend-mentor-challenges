@@ -57,7 +57,7 @@ function Navbar() {
           <img src={isNavOpen ? closeIcon : hamburger} alt="" />
         </button>
       </div>
-      <div className="hidden lg:block h-[1px] bg-gray-500 translate-x-6 z-10 flex-1"></div>
+      <div className="hidden lg:block h-[1px] bg-gray-500 translate-x-6 z-20 flex-1"></div>
       <nav
         id="nav-menu"
         role={role}
