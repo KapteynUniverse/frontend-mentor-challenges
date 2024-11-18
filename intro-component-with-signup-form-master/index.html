@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <meta name="description" content="Sign-up form" />
+    <meta name="author" content="Asilcan Toper" />
 
     <link
       rel="icon"
@@ -24,42 +25,88 @@
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="left-container">
-          <h1>Learn to code by watching others</h1>
+      <section class="left-container">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+      <section class="right-container">
+        <h2>Try it free 7 days <span>then $20/mo. thereafter</span></h2>
+        <form>
+          <fieldset>
+            <legend>Create an Account</legend>
+            <div>
+              <label for="fname" class="sr-only"
+                >Please write your first name</label
+              >
+              <input
+                id="fname"
+                type="text"
+                name="fname"
+                placeholder="First Name"
+                required
+                autocomplete="given-name"
+                autofocus
+              />
+            </div>
+            <div>
+              <label for="lname" class="sr-only"
+                >Please write your last name</label
+              >
+              <input
+                id="lname"
+                type="text"
+                name="lname"
+                placeholder="Last Name"
+                required
+                autocomplete="family-name"
+              />
+            </div>
+            <div>
+              <label for="email" class="sr-only"
+                >Please write your e-mail adress</label
+              >
+              <input
+                id="email"
+                type="email"
+                placeholder="Email Address"
+                required
+                autocomplete="email"
+                aria-describedby="password-hint"
+              />
+              <p id="email-hint" class="hint" aria-live="polite">
+                Please enter a valid email address
+              </p>
+              <label for="password" class="sr-only"
+                >Please write a password</label
+              >
+            </div>
+            <div>
+              <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                required
+                autocomplete="new-password"
+                minlength="8"
+                maxlength="16"
+                aria-describedby="password-hint"
+              />
+              <p id="password-hint" class="hint" aria-live="polite">
+                Password must contain minimum of 8 character
+              </p>
+            </div>
+            <button>Claim your free trial</button>
+          </fieldset>
           <p>
-            See how experienced developers solve problems in real-time. Watching
-            scripted tutorials is great, but understanding how developers think
-            is invaluable.
+            By clicking the button, you are agreeing to our
+            <strong class="tos">Terms and Services</strong>
           </p>
-        </div>
-        <div class="right-container">
-          <h2>Try it free 7 days <span>then $20/mo. thereafter</span></h2>
-          <form action="submit">
-            <input
-              type="text"
-              name="fname"
-              placeholder="First Name"
-              required
-              autofocus
-            />
-            <input type="text" name="lname" placeholder="Last Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <input
-              type="password"
-              placeholder="Password"
-              required
-              minlength="8"
-              maxlength="16"
-            />
-            <button>CLAIM YOUR FREE TRIAL</button>
-            <h3>
-              By clicking the button, you are agreeing to our
-              <span class="tos">Terms and Services</span>
-            </h3>
-          </form>
-        </div>
-      </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
