@@ -4,7 +4,7 @@
   --blue: hsl(248, 32%, 49%);
   --dark-blue: hsl(249, 10%, 26%);
   --grayish-blue: hsl(246, 25%, 77%);
-  --fs: 16px;
+  --fs: 1rem;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
@@ -67,6 +67,19 @@ h6 {
 
 /* BASE STYLES */
 
+legend,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 html {
   font-family: "Poppins", system-ui;
   font-weight: var(--fw-400);
@@ -80,49 +93,46 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-size: var(--fs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .left-container {
   color: white;
-  margin-left: 10em;
-  max-width: 35em;
+  max-width: 35rem;
 }
 
 .right-container {
-  margin-right: 10em;
-  margin-left: 3em;
-  min-width: 35em;
+  margin-left: 3rem;
+  width: min(35rem, 90vw);
 }
 
 h1 {
-  font-size: 2.5rem;
-  text-wrap: balance;
-  margin-bottom: 0.5em;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
 h2 {
   font-size: 1rem;
   background-color: var(--blue);
   text-align: center;
-  margin-bottom: 1em;
-  padding-inline: 2em;
-  padding-block: 1em;
-  border-radius: 0.625em;
+  margin-bottom: 1.5rem;
+  padding-inline: 2rem;
+  padding-block: 1rem;
+  border-radius: 0.625rem;
   color: white;
-  box-shadow: 0 0.4em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 h2 > span {
@@ -130,27 +140,36 @@ h2 > span {
 }
 
 form {
-  height: 100%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+fieldset {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
-  padding: 2em;
-  border-radius: 0.625em;
-  box-shadow: 0 0.5em rgba(0, 0, 0, 0.2);
+  border: none;
+  gap: 1rem;
+}
+
+fieldset div {
+  display: flex;
+  flex-direction: column;
 }
 
 input,
 button {
-  padding: 1em;
-  border-radius: 0.625em;
-  margin-bottom: 1em;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  font-weight: var(--fw-600);
 }
 
 input {
   border: 1px solid var(--grayish-blue);
   outline: none;
-  padding-inline: 2em;
+  padding-inline: 2rem;
 }
 
 input:focus {
@@ -159,6 +178,9 @@ input:focus {
 
 input:not(:placeholder-shown):valid {
   border: 1px solid var(--green);
+  background-image: url(./images/icon-check.png);
+  background-position: 95%;
+  background-repeat: no-repeat;
 }
 
 input:not(:placeholder-shown):invalid {
@@ -168,11 +190,22 @@ input:not(:placeholder-shown):invalid {
   background-repeat: no-repeat;
 }
 
+input:not(:placeholder-shown):invalid + p {
+  display: block;
+  font-weight: var(--fw-600);
+}
+
+.hint {
+  color: var(--red);
+  margin-left: 2rem;
+  display: none;
+}
 button {
   border: none;
   background-color: var(--green);
-  color: white;
-  box-shadow: 0.2em 0.2em #45b081;
+  color: #0a2f0a;
+  box-shadow: 0.2rem 0.2rem #45b081;
+  text-transform: uppercase;
 }
 
 button:hover {
@@ -180,62 +213,39 @@ button:hover {
   opacity: 0.75;
 }
 
-h3 {
+form p:not(.hint) {
   font-size: 0.7rem;
   text-align: center;
   color: var(--grayish-blue);
+  margin-top: 1rem;
+  font-weight: var(--fw-400);
 }
 
 .tos {
-  color: var(--red);
+  color: #a91b1b;
+  font-weight: var(--fw-600);
 }
 
-@media screen and (max-width: 850px) {
-  .right-container {
-    min-width: 25em;
+@media screen and (max-width: 880px) {
+  body {
+    font-size: 0.875rem;
+    margin-top: 1rem;
   }
-}
-@media screen and (max-width: 675px) {
-  .right-container {
-    min-width: 20em;
-  }
-}
-@media screen and (max-width: 600px) {
-  .container {
+  main {
     flex-direction: column;
   }
   .left-container {
-    margin: 2em;
+    text-align: center;
+    margin-bottom: 2rem;
   }
-
-  .right-container {
-    margin: 2em;
-  }
-  p,
   h1 {
-    text-align: center;
+    font-size: 2.5rem;
   }
-}
-
-@media screen and (max-width: 400px) {
-  :root {
-    font-size: 12px;
-  }
-  .container {
-    flex-direction: column;
-  }
-  .left-container {
-    margin: 2em;
-  }
-
   .right-container {
-    margin: 2em;
+    margin-left: 0;
   }
-  h1,
-  p {
-    text-align: center;
-  }
-  h2 {
-    text-wrap: balance;
+
+  form {
+    padding: 0.5rem;
   }
 }
