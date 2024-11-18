@@ -3,7 +3,12 @@
   --slate-300: hsl(212, 45%, 89%);
   --slate-500: hsl(216, 15%, 48%);
   --slate-900: hsl(218, 44%, 22%);
-  --fs: 1rem;
+  --text-preset1-fs: 1.375rem;
+  --text-preset1-lh: 120%;
+  --text-preset1-ls: 0;
+  --text-preset2-fs: 0.9375rem;
+  --text-preset2-lh: 140%;
+  --text-preset2-ls: 0.2px;
   --fw-400: 400;
   --fw-700: 700;
 }
@@ -11,34 +16,36 @@
 /* RESET */
 /* Josh Comeau custom css reset */
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 2. Remove default margin */
 * {
   margin: 0;
 }
 
-html,
 body {
-  height: 100%;
-}
-
-body {
+  /* 3. Add accessible line-height */
   line-height: 1.5;
+  /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
 
+/* 5. Improve media defaults */
 img,
 picture,
 video,
 canvas,
 svg {
   display: block;
+  max-width: 100%;
 }
 
+/* 6. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -46,6 +53,7 @@ select {
   font: inherit;
 }
 
+/* 7. Avoid text overflows */
 p,
 h1,
 h2,
@@ -56,11 +64,26 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
 #root,
 #__next {
   isolation: isolate;
 }
-
 /* BASE STYLES */
 
 body {
@@ -68,7 +91,6 @@ body {
   font-optical-sizing: auto;
   font-weight: var(--fw-400);
   font-style: normal;
-  font-size: var(--fs);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -78,26 +100,34 @@ body {
 
 .qr-card {
   max-width: 20em;
-  padding: 1em;
+  padding: 1rem;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  border-radius: 1em;
-  gap: 1.5em;
+  border-radius: 1.25rem;
   text-align: center;
-  box-shadow: 0 0.3em 0.5em var(--slate-500);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.0477);
 }
 
 .qr-code {
-  border-radius: inherit;
+  max-width: 100%;
+  display: inline-block;
+  border-radius: 0.625rem;
 }
 
 .title {
   color: var(--slate-900);
-  line-height: 1.25;
+  font-size: var(--text-preset1-fs);
+  line-height: var(--text-preset1-lh);
+  letter-spacing: var(--text-preset1-ls);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .sub-title {
   color: var(--slate-500);
-  margin-bottom: 1.5em;
+  font-size: var(--text-preset2-fs);
+  line-height: var(--text-preset2-lh);
+  letter-spacing: var(--text-preset2-ls);
+  margin-bottom: 1.5rem;
 }
