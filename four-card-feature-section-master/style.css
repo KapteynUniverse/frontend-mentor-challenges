@@ -32,11 +32,6 @@
   margin: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -79,9 +74,6 @@ body {
   font-size: var(--fs-p);
   min-height: 100vh;
   background-color: var(--very-light-gray);
-}
-
-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,6 +83,22 @@ main {
 header {
   max-width: 54ch;
   text-align: center;
+}
+
+main {
+  width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+  grid-template-rows: auto;
+  gap: 1rem;
+  place-items: center;
 }
 
 .title {
@@ -109,49 +117,41 @@ header {
 }
 
 .sub-title {
-  margin-top: 1.5em;
-  margin-bottom: 4.5em;
-}
-
-.cards {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2em;
+  margin-top: 1.5rem;
+  margin-bottom: 4.5rem;
 }
 
 .card {
   position: relative;
-  max-width: 24em;
-  min-width: 16em;
-  min-height: 15em;
+  max-width: 24rem;
+  min-height: 15rem;
   background-color: white;
-  border-radius: 0.25em;
-  box-shadow: 0 0.5em 2em var(--grayish-blue);
-  padding: 1.5em;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 2rem var(--grayish-blue);
+  padding: 1.5rem;
   color: var(--very-dark-blue);
 }
 
 .card > p {
   color: var(--grayish-blue);
-  margin-top: 0.5em;
+  margin-top: 0.5rem;
 }
 
 .supervisor {
-  border-top: 0.25em solid var(--cyan);
+  border-top: 0.25rem solid var(--cyan);
 }
 
 .team-builder {
-  border-top: 0.25em solid var(--red);
-  margin-bottom: 2em;
+  border-top: 0.25rem solid var(--red);
+  margin-bottom: 2rem;
 }
 
 .karma {
-  border-top: 0.25em solid var(--orange);
+  border-top: 0.25rem solid var(--orange);
 }
 
 .calculator {
-  border-top: 0.25em solid var(--blue);
+  border-top: 0.25rem solid var(--blue);
 }
 
 img {
@@ -161,19 +161,8 @@ img {
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 750px) {
-  .cards {
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  header {
-    font-size: 0.75rem;
-    text-align: left;
-    margin-inline: 1.5em;
-  }
-  .card {
-    max-width: 22em;
+@media screen and (max-width: 48.8125rem) {
+  .flex-column {
+    grid-row: span 2;
   }
 }
