@@ -204,6 +204,7 @@ button {
   transition: opacity 0.7s ease-in-out;
 }
 
+a:hover,
 button:hover {
   cursor: pointer;
   opacity: 0.75;
@@ -225,6 +226,7 @@ form p:not(.hint) {
 a {
   text-decoration: none;
   color: inherit;
+  transition: opacity 0.7s ease-in-out;
 }
 
 @media screen and (max-width: 880px) {
