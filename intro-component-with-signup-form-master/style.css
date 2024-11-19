@@ -222,6 +222,11 @@ form p:not(.hint) {
   font-weight: var(--fw-600);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media screen and (max-width: 880px) {
   body {
     font-size: 0.875rem;
