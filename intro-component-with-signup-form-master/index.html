@@ -75,7 +75,7 @@
                 pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 required
                 autocomplete="email"
-                aria-describedby="password-hint"
+                aria-describedby="email-hint"
               />
               <p id="email-hint" class="hint" aria-live="polite">
                 Please enter a valid email address
@@ -99,11 +99,11 @@
                 Password must contain minimum of 8 character
               </p>
             </div>
-            <button>Claim your free trial</button>
+            <button aria-describedby="btn-hint">Claim your free trial</button>
           </fieldset>
-          <p>
+          <p id="btn-hint">
             By clicking the button, you are agreeing to our
-            <strong class="tos">Terms and Services</strong>
+            <strong class="tos"><a href="#"> Terms and Services </a></strong>
           </p>
         </form>
       </section>
