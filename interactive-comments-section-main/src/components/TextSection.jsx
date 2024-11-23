@@ -100,7 +100,7 @@ function TextSection(props) {
       onInput={handleInputChange}
       onSubmit={handleSubmit}
       action="post"
-      className={`bg-white grid grid-cols-[2fr_1fr] items-center gap-4 p-4 md:grid-cols-[1fr_7fr_2fr] md:items-start transition-[outline] duration-1000 ease-in-out outline-none target:outline-pink-500 target:outline-4  ${props.style}`}
+      className={`bg-white grid grid-cols-[2fr_1fr] items-center gap-4 p-4 md:grid-cols-[1fr_7fr_2fr] md:items-start transition-[outline] duration-1000 ease-in-out outline-none target:outline-pink-500 target:outline-4 rounded-lg ${props.style}`}
     >
       <div className="relative w-full col-span-2 md:col-start-2 md:row-start-1 md:col-span-1">
         <label htmlFor="textarea" className="sr-only">
