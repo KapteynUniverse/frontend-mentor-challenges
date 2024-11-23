@@ -71,7 +71,7 @@ function Home() {
         <div
           key={index}
           id={comment.user.uid + index}
-          className="bg-white grid grid-cols-2 gap-4 p-4 md:grid-cols-[1fr_7fr_2fr] max-w-3xl"
+          className="bg-white grid grid-cols-2 gap-4 p-4 md:grid-cols-[1fr_7fr_2fr] max-w-3xl rounded-lg"
         >
           <ProfileSection
             imgSrc={comment.user.photoURL}
