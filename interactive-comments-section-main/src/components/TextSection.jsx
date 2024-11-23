@@ -24,7 +24,7 @@ function TextSection(props) {
 
   // const [message, setMessage] = useState();
   const [message, setMessage] = useState(
-    props.commentText || (props.replyTo ? "@" + props.replyTo : "")
+    props.commentText || "")
   );
   const [messageLength, setMessageLength] = useState(
     props.commentText?.length || 0
