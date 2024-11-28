@@ -83,11 +83,6 @@
   margin: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -198,8 +193,11 @@ body {
   font-family: Fraunces;
   font-size: var(--font-size-p);
   text-align: center;
+}
+
+main {
   max-width: 1440px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 footer {
