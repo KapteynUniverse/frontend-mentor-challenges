@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frontend Mentor Interactive Rating Component"
+    />
+    <meta name="author" content="Asilcan Toper" />
 
     <link
       rel="icon"
@@ -22,27 +27,78 @@
   </head>
   <body>
     <main>
-      <div class="card">
+      <form>
         <img src="./images/icon-star.svg" alt="" class="star" />
-        <img
-          src="./images/illustration-thank-you.svg"
-          alt=""
-          class="hidden star-2"
-        />
-        <p id="final-rate" class="hidden"></p>
-        <h1 id="title">How did we do?</h1>
-        <p id="sub-title">
+        <h2>How did we do?</h2>
+        <p>
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <div class="rating">
-          <div class="rate" data-value="1">1</div>
-          <div class="rate" data-value="2">2</div>
-          <div class="rate" data-value="3">3</div>
-          <div class="rate" data-value="4">4</div>
-          <div class="rate" data-value="5">5</div>
-        </div>
-        <button id="submit">Submit</button>
+        <fieldset class="rating">
+          <legend class="sr-only">Select your rating</legend>
+          <input
+            type="radio"
+            name="rating"
+            id="1"
+            value="1"
+            class="sr-only"
+            required
+          />
+          <label for="1">1</label>
+          <input
+            type="radio"
+            name="rating"
+            id="2"
+            value="2"
+            class="sr-only"
+            required
+          />
+          <label for="2">2</label>
+          <input
+            type="radio"
+            name="rating"
+            id="3"
+            value="3"
+            class="sr-only"
+            required
+          />
+          <label for="3">3</label>
+          <input
+            type="radio"
+            name="rating"
+            id="4"
+            value="4"
+            class="sr-only"
+            required
+          />
+          <label for="4">4</label>
+          <input
+            type="radio"
+            name="rating"
+            id="5"
+            value="5"
+            class="sr-only"
+            required
+          />
+          <label for="5">5</label>
+        </fieldset>
+        <button>Submit</button>
+      </form>
+      <div
+        class="modal"
+        role="dialog"
+        aria-labelledby="dialogTitle"
+        aria-describedby="dialogDesc"
+        aria-live="polite"
+      >
+        <img src="./images/illustration-thank-you.svg" alt="" />
+        <p>You selected <span class="selected-rating"></span> out of 5</p>
+        <h2 id="dialogTitle">Thank you!</h2>
+        <p id="dialogDesc">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+        <button class="close-modal">Go Back</button>
       </div>
     </main>
     <script src="index.js"></script>
