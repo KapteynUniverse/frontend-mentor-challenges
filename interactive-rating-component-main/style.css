@@ -11,26 +11,26 @@
 /* RESET */
 /* Josh Comeau custom css reset */
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+/* 2. Remove default margin */
 * {
   margin: 0;
 }
 
-html,
 body {
-  height: 100%;
-}
-
-body {
+  /* 3. Add accessible line-height */
   line-height: 1.5;
+  /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
 }
 
+/* 5. Improve media defaults */
 img,
 picture,
 video,
@@ -40,6 +40,7 @@ svg {
   max-width: 100%;
 }
 
+/* 6. Inherit fonts for form controls */
 input,
 button,
 textarea,
@@ -47,6 +48,7 @@ select {
   font: inherit;
 }
 
+/* 7. Avoid text overflows */
 p,
 h1,
 h2,
@@ -57,6 +59,22 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
 #root,
 #__next {
   isolation: isolate;
@@ -64,45 +82,59 @@ h6 {
 
 /* BASE STYLES */
 
-html {
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
   font-family: "Overpass", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
-
-body {
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--very-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 main {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-areas: "stack";
 }
 
-.card {
-  height: 25em;
-  width: 25em;
+form,
+.modal {
+  grid-area: stack;
+  max-width: min(90vw, 25rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 1rem;
   background: linear-gradient(var(--dark-blue), var(--very-dark-blue));
   color: var(--light-grey);
   border-radius: 1em;
   padding: 1.5em;
-  max-width: 90%;
+  transition: visibility 0.3s, opacity 0.3s;
 }
 
-h1 {
+fieldset {
+  border: transparent;
+}
+
+h2 {
   color: var(--white);
   font-size: 1.875rem;
 }
 
-h1,
+h2,
 button,
 .rate {
   font-weight: var(--fw-700);
@@ -111,9 +143,9 @@ button,
 .star {
   background-color: var(--very-dark-blue);
   border-radius: 50%;
-  padding: 1em;
-  width: 3em;
-  height: 3em;
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
 }
 
 .rating {
@@ -121,52 +153,52 @@ button,
   justify-content: space-between;
 }
 
-.rate {
-  width: 3em;
-  height: 3em;
+label {
+  width: 3rem;
+  height: 3rem;
   background-color: var(--dark-blue);
-  padding: 1em;
+  padding: 1rem;
   text-align: center;
   border-radius: 50%;
   cursor: pointer;
 }
 
-button {
+button,
+a {
   width: 100%;
-  border-radius: 1em;
+  border-radius: 1rem;
   background-color: var(--orange);
   color: var(--dark-blue);
-  align-self: flex-start;
-  padding: 0.5em;
+  padding: 0.5rem;
   cursor: pointer;
+  transition: color 0.3s;
+  border: transparent;
 }
-.selected,
+
+input:focus-visible + label,
+label:hover {
+  background-color: var(--orange);
+  color: var(--very-dark-blue);
+  transition: color 0.3s;
+}
+input:focus-visible + label {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+input:checked + label,
 button:hover {
   background-color: var(--white);
   color: var(--very-dark-blue);
 }
 
-.rate:hover {
-  background-color: var(--orange);
-  color: var(--very-dark-blue);
+.modal {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
 }
 
-.hidden {
-  display: none;
-}
-
-#final-rate {
-  color: var(--orange);
-  background-color: var(--dark-blue);
-  border-radius: 1em;
-  padding-inline: 1em;
-  padding-block: 0.5em;
-  width: max-content;
-  align-self: center;
-}
-
-.star-2 {
-  height: 5em;
-  width: 6em;
-  align-self: center;
+.modal img {
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
