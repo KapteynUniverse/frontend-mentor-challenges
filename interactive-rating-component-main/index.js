@@ -1,41 +1,24 @@
-const buttons = document.querySelectorAll(".rate");
-const submit = document.getElementById("submit");
-const title = document.getElementById("title");
-const subTitle = document.getElementById("sub-title");
-const finalRate = document.getElementById("final-rate");
-const thanks = document.getElementsByTagName("img");
+const form = document.querySelector("form");
+const modal = document.querySelector(".modal");
+const selectedRating = document.querySelector(".selected-rating");
+const closeModal = document.querySelector(".close-modal");
 
-let data = null;
-let selectedButton = null;
+const toggleVisibility = (element, isVisible) => {
+  element.style.visibility = isVisible ? "visible" : "hidden";
+  element.style.opacity = isVisible ? "1" : "0";
+  element.setAttribute("aria-hidden", !isVisible);
+};
 
-buttons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    if (selectedButton) {
-      selectedButton.classList.remove("selected");
-    }
-    button.classList.toggle("selected");
-    selectedButton = button;
-    data = button.dataset.value;
-    console.log("Selected value:", data);
-  });
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const rating = document.querySelector("input[name='rating']:checked")?.value;
+
+  selectedRating.textContent = rating;
+  toggleVisibility(form, false);
+  toggleVisibility(modal, true);
 });
 
-submit.addEventListener("click", function () {
-  if (data) {
-    buttons.forEach(function (button) {
-      button.classList.add("hidden");
-      submit.classList.add("hidden");
-      title.innerHTML = "Thank you!";
-      title.style.textAlign = "center";
-      subTitle.innerHTML =
-        "We appreciate you taking the time to give a rating. If you ever need more";
-      subTitle.style.textAlign = "center";
-      finalRate.innerHTML = `You selected ${data} out of 5`;
-      finalRate.classList.toggle("hidden");
-      thanks[0].classList.add("hidden");
-      thanks[1].classList.toggle("hidden");
-    });
-  } else {
-    alert("Please select a number first");
-  }
+closeModal.addEventListener("click", () => {
+  toggleVisibility(modal, false);
+  toggleVisibility(form, true);
 });
