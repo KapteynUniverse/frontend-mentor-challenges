@@ -22,3 +22,4 @@ closeModal.addEventListener("click", () => {
   toggleVisibility(modal, false);
   toggleVisibility(form, true);
 });
+ 
