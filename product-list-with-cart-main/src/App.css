@@ -412,6 +412,27 @@ dialog ul {
   object-fit: cover;
 }
 
+/* Scrollbar */
+
+body::-webkit-scrollbar,
+dialog::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--rose-300);
+}
+
+body::-webkit-scrollbar-thumb,
+dialog::-webkit-scrollbar-thumb {
+  background: var(--red);
+  border-radius: 0.5rem;
+}
+
+dialog::-webkit-scrollbar-track {
+  background: var(--rose-100);
+}
+
 @media screen and (min-width: 48rem) {
   dialog {
     margin: auto;
@@ -427,3 +448,4 @@ dialog ul {
     flex: 1;
   }
 }
+
