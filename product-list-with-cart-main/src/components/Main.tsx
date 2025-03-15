@@ -8,7 +8,7 @@ const Main = () => {
     <main>
       <h1 className="sr-only">Product List With Cart</h1>
       <section aria-labelledby="product-type" className="product-section">
-        <h2 id="product-type">Desserts</h2>
+        <h2 id="product-type" className="product-type">Desserts</h2>
         <ul className="products" role="list">
           <Products />
         </ul>
