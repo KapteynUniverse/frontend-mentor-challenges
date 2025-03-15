@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Red Hat Text";
+  src: local("Red Hat Text"),
+    url("/assets/fonts/RedHatText-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
 :root {
   --red: hsl(14, 86%, 41%);
   --green: hsl(159, 69%, 38%);
