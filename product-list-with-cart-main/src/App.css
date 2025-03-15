@@ -119,6 +119,10 @@ button {
 
 /* Product List */
 
+.product-type {
+  font-size: 3rem;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
