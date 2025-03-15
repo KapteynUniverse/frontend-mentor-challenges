@@ -171,7 +171,7 @@ article {
   background-repeat: no-repeat;
   background-size: contain;
   content: "";
-  background-image: url(./assets/images/icons/icon-add-to-cart.svg);
+  background-image: url(/assets/images/icons/icon-add-to-cart.svg);
   width: 1.5rem;
   height: 1.5rem;
 }
