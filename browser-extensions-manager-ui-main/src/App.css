@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+/* Weights 400, 500, 700 */
+
+:root {
+  --bg-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --bg-extension: hsl(220, 100%, 99%);
+  --clr-border: hsl(217, 61%, 90%);
+  --bg-button-active: hsl(3, 77%, 44%);
+  --bg-button-passive: hsl(0, 0%, 78%);
+  --bg-toggle-theme: hsl(0, 0%, 93%);
+  --font-noto-sans: "Noto Sans", sans-serif;
+  --text-clr: hsl(227, 75%, 14%);
+  --filter-bg-clr: hsl(220, 100%, 99%);
+  --filter-clr-passive: hsl(227, 75%, 14%);
+  --filter-clr-active: hsl(0, 0%, 93%);
+  --bg-button-hover: hsl(3, 71%, 56%);
+  --bg-toggle-hover: hsla(226, 11%, 37%, 0.5);
+  --article-clr: hsl(225, 2%, 41%);
+}
+html[data-theme="dark"] {
+  --bg-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --bg-extension: hsl(226, 25%, 17%);
+  --clr-border: hsl(226, 11%, 37%);
+  --bg-button-active: hsl(3, 86%, 64%);
+  --bg-button-passive: hsl(226, 11%, 37%);
+  --bg-toggle-theme: hsl(225, 23%, 24%);
+  --text-clr: hsl(0, 0%, 93%);
+  --filter-bg-clr: hsl(225, 23%, 24%);
+  --filter-clr-active: hsl(227, 75%, 14%);
+  --filter-clr-passive: hsl(0, 0%, 93%);
+  --bg-toggle-hover: hsl(226, 11%, 37%);
+  --article-clr: hsl(225, 13%, 76%);
+}
+
+body {
+  text-align: center;
+  color: var(--text-clr);
+  background: var(--bg-gradient);
+}
+
+header,
+article {
+  background-color: var(--bg-extension);
+}
+
+.article-text {
+  color: var(--article-clr);
+}
+
+.filter-btn {
+  background-color: var(--filter-bg-clr);
+}
+
+.filter-btn,
+article,
+button {
+  border-color: var(--clr-border);
+}
+
+button:has(img) {
+  background-color: var(--bg-toggle-theme);
+}
+
+button:has(img):hover,
+button:has(img):focus {
+  background-color: var(--bg-toggle-hover);
+}
+
+.toggle-switch:has(input) {
+  background-color: var(--bg-button-passive);
+  color: var(--filter-clr-passive);
+}
+
+.filter-btn-active,
+.toggle-switch:has(input:checked) {
+  background-color: var(--bg-button-active);
+  color: var(--filter-clr-active);
+}
+
+.toggle-switch:has(input):hover,
+.toggle-switch:has(input):focus-within {
+  background-color: hsla(226, 11%, 37%, 0.75);
+}
+
+.remove-btn:hover,
+.remove-btn:focus,
+.filter-btn:hover,
+.filter-btn:focus,
+.toggle-switch:has(input:checked):hover,
+.toggle-switch:has(input:checked):focus-within {
+  background-color: var(--bg-button-hover);
+  color: var(--filter-clr-active);
+}
+
+input:focus {
+  outline: transparent;
+}
+
+.filter-btn:focus,
+.toggle-switch:has(input):focus-within,
+button:focus-visible {
+  outline: 2px solid var(--bg-button-active);
+  outline-offset: 2px;
+}
