@@ -5,7 +5,6 @@
   margin: 0 auto;
   padding: 1rem;
 }
-/* Weights 400, 500, 700 */
 
 :root {
   --bg-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
@@ -42,6 +41,7 @@ body {
   text-align: center;
   color: var(--text-clr);
   background: var(--bg-gradient);
+  font-family: var(--font-noto-sans);
 }
 
 header,
