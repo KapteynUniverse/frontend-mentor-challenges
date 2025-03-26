@@ -32,7 +32,7 @@ const Extension = ({
         >
           Remove
         </button>
-        <label className="w-12 h-6 rounded-full relative transition-colors cursor-pointer toggle-switch">
+        <label className="w-12 h-6 rounded-full relative transition-colors cursor-pointer toggle-switch" aria-label={`Toggle state to ${isActive ? "active" : "inactive"}`}>
           <input
             type="checkbox"
             checked={isActive}
