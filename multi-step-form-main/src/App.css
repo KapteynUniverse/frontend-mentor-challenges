@@ -356,10 +356,6 @@ input::placeholder {
   min-height: 6.5rem;
 }
 
-.step-2 label:not(.toggle-label) {
-    flex-wrap: wrap;
-}
-
 .step-2 label p:not(:nth-child(1)) {
   font-size: 0.875rem;
 }
