@@ -7,6 +7,8 @@ export type FormData = {
   addons: string[];
 };
 
+export type FormInputField = "name" | "email" | "tel";
+
 type handleChange = (e: React.ChangeEvent<HTMLInputElement>) => void;
 
 export type handleSideStepClick = (step: number) => void;
