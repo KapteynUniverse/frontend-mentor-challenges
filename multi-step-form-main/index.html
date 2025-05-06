@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Asilcan Toper" />
+    <meta name="description" content="FeM Multi Step Form" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="Frontend, Frontend Mentor, Multi Step Form, Asilcan Toper"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/icons/favicon.png"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script defer>
+      window.addEventListener("blur", () => {
+        document.title =
+          "Don't miss the chance — subscribe with a 50% discount";
+      });
+      window.addEventListener("focus", () => {
+        document.title = "Frontend Mentor | Multi-step form";
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+    <noscript
+      ><p style="text-align: center">You need to enable JavaScript!</p>
+    </noscript>
+  </body>
+</html>
