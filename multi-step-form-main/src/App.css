@@ -350,6 +350,7 @@ input::placeholder {
 
 .step-2 label {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-block: 1rem;
   padding: 1rem;
