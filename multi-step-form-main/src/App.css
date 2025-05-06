@@ -350,11 +350,14 @@ input::placeholder {
 
 .step-2 label {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
   margin-block: 1rem;
   padding: 1rem;
   min-height: 6.5rem;
+}
+
+.step-2 label:not(.toggle-label) {
+    flex-wrap: wrap;
 }
 
 .step-2 label p:not(:nth-child(1)) {
