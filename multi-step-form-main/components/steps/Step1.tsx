@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { StepProps } from "../../types/types";
+import { StepProps, FormInputField } from "../../types/types";
 
 const Step1 = ({ handleChange, formData }: StepProps) => {
-  const inputFields = [
+  const inputFields: {
+    id: FormInputField;
+    type: string;
+    name: FormInputField;
+    placeholder: string;
+    autoComplete: string;
+    label: string;
+  }[] = [
     {
       id: "name",
       type: "text",
