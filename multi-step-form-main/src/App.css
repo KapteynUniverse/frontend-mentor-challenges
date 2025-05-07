@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu"),
-    url("/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+  url("/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu Medium"),
-    url("/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
+  url("/assets/fonts/Ubuntu-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu Bold"),
-    url("/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+  url("/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -151,6 +151,10 @@ body {
   font-weight: 400;
 }
 
+li {
+  list-style: none;
+}
+
 h2,
 label {
   color: var(--blue-950);
@@ -242,7 +246,7 @@ fieldset,
   background-repeat: no-repeat;
 }
 
-.side-step-buttons div {
+.side-step-buttons li {
   margin-block-start: -3rem;
 }
 
@@ -591,7 +595,7 @@ input::placeholder {
     background-size: cover;
   }
 
-  .side-step-buttons div {
+  .side-step-buttons li {
     margin-block: 0.25rem;
   }
 
