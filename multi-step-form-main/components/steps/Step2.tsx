@@ -28,34 +28,38 @@ const Step2 = ({ handleChange, formData }: StepProps) => {
     },
   ];
   return (
-    <fieldset className="step-2">
-      <legend>Plan</legend>
-      <h2>Select your plan</h2>
-      <p>You have the option of monthly or yearly billing.</p>
-      <div className="plan-container">
-        {plans.map(({ id, label, image, monthly, yearly }) => (
-          <div key={id}>
-            <input
-              id={id}
-              name="plan"
-              type="radio"
-              onChange={handleChange}
-              value={id}
-              checked={formData.plan === id}
-              className="sr-only plan-input"
-            />
-            <label htmlFor={id}>
-              <img src={image} alt="" width={40} height={40} />
-              <div>
-                <p>{label}</p>
-                <p aria-live="polite">{formData.isYearly ? yearly : monthly}</p>
-                {formData.isYearly && <p>2 months free</p>}
-              </div>
-            </label>
-          </div>
-        ))}
-      </div>
-      <fieldset>
+    <div className="step-2-container">
+      <fieldset className="step-2">
+        <legend>Plan</legend>
+        <h2>Select your plan</h2>
+        <p>You have the option of monthly or yearly billing.</p>
+        <div className="plan-container">
+          {plans.map(({ id, label, image, monthly, yearly }) => (
+            <div key={id}>
+              <input
+                id={id}
+                name="plan"
+                type="radio"
+                onChange={handleChange}
+                value={id}
+                checked={formData.plan === id}
+                className="sr-only plan-input"
+              />
+              <label htmlFor={id}>
+                <img src={image} alt="" width={40} height={40} />
+                <div>
+                  <p>{label}</p>
+                  <p aria-live="polite">
+                    {formData.isYearly ? yearly : monthly}
+                  </p>
+                  {formData.isYearly && <p>2 months free</p>}
+                </div>
+              </label>
+            </div>
+          ))}
+        </div>
+      </fieldset>
+      <fieldset className="toggle-container">
         <legend className="sr-only">Billing frequency</legend>
         <input
           id="toggle"
@@ -79,7 +83,7 @@ const Step2 = ({ handleChange, formData }: StepProps) => {
           <span>Yearly</span>
         </label>
       </fieldset>
-    </fieldset>
+    </div>
   );
 };
 
