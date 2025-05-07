@@ -31,7 +31,7 @@ const Step2 = ({ handleChange, formData }: StepProps) => {
     <div className="step-2-container">
       <fieldset className="step-2">
         <legend>Plan</legend>
-        <h2>Select your plan</h2>
+        <h2 id="form-title">Select your plan</h2>
         <p>You have the option of monthly or yearly billing.</p>
         <div className="plan-container">
           {plans.map(({ id, label, image, monthly, yearly }) => (
