@@ -64,7 +64,7 @@ const Step1 = ({ handleChange, formData }: StepProps) => {
   return (
     <fieldset className="step-1">
       <legend>Personal information</legend>
-      <h2>Personal info</h2>
+      <h2 id="form-title">Personal info</h2>
       <p>Please provide your name, email address, and phone number.</p>
       {inputFields.map(
         ({ id, type, name, placeholder, autoComplete, label }) => (
