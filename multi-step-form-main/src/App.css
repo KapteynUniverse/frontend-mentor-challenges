@@ -369,7 +369,19 @@ input::placeholder {
   border-radius: 0.25rem;
 }
 
-.step-2 span {
+.toggle-container {
+  margin-top: 0;
+  padding: 0;
+}
+
+.toggle-container label {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.toggle-container span {
   color: var(--grey);
 }
 .toggle-input:not(:checked):hover ~ label span:nth-of-type(2),
