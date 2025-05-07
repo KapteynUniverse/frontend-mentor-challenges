@@ -15,11 +15,17 @@ const SideStepButtons = ({
   activeStep: number;
 }) => {
   return (
-    <div className="side-step-buttons">
+    <ul className="side-step-buttons" role="list">
       {steps.map((step, index) => (
-        <div key={index} className="button-container">
+        <li key={index} className="button-container">
           <button
             aria-label={`Go to step ${index + 1}: ${step.desc}`}
+            aria-current={
+              activeStep === index + 1 ||
+              (index === steps.length - 1 && activeStep === 5)
+                ? "step"
+                : undefined
+            }
             className={
               activeStep === index + 1 ||
               (index === steps.length - 1 && activeStep === 5)
@@ -41,9 +47,9 @@ const SideStepButtons = ({
               {step.desc}
             </p>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
