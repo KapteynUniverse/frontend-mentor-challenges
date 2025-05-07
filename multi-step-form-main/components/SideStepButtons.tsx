@@ -19,6 +19,7 @@ const SideStepButtons = ({
       {steps.map((step, index) => (
         <div key={index} className="button-container">
           <button
+            aria-label={`Go to step ${index + 1}: ${step.desc}`}
             className={
               activeStep === index + 1 ||
               (index === steps.length - 1 && activeStep === 5)
@@ -28,11 +29,17 @@ const SideStepButtons = ({
             type="button"
             onClick={() => handleSideStepClick(index + 1)}
           >
-            <span className="step-number">{index + 1}</span>
+            <span className="step-number" aria-hidden="true">
+              {index + 1}
+            </span>
           </button>
           <div className="step-text-container">
-            <p className="step-label">{step.label}</p>
-            <p className="step-desc">{step.desc}</p>
+            <p aria-hidden="true" className="step-label">
+              {step.label}
+            </p>
+            <p aria-hidden="true" className="step-desc">
+              {step.desc}
+            </p>
           </div>
         </div>
       ))}
