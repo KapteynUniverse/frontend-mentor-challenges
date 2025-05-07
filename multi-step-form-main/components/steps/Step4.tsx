@@ -27,8 +27,9 @@ const Step4 = ({ formData, handleSideStepClick }: Step4Props) => {
     selectedAddons.reduce((sum, addon) => sum + addon.price, 0);
 
   return (
-    <section className="step-4" aria-labelledby="step-4-title">
-      <h2 id="step-4-title">Finishing up</h2>
+    <fieldset className="step-4">
+      <legend id="form-title">Confirm Subscription</legend>
+      <h2 id="form-title">Finishing up</h2>
       <p>Double-check everything looks OK before confirming.</p>
       <div>
         <div className="step-4-container">
@@ -73,7 +74,7 @@ const Step4 = ({ formData, handleSideStepClick }: Step4Props) => {
           </p>
         </div>
       </div>
-    </section>
+    </fieldset>
   );
 };
 
