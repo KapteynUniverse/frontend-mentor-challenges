@@ -5,24 +5,31 @@ type Props = {
 };
 
 const StepButtons = ({ handleForwardStep, handleBackStep, step }: Props) => {
+  const isLastStep = step === 4;
+  const isSubmit = step === 5;
+
   return (
     <div className="step-buttons">
       <button
-        // If a change to step === 4, it reloads the page at step 3
-        type={step === 5 ? "submit" : "button"}
+        type={isSubmit ? "submit" : "button"}
         onClick={handleForwardStep}
-        className={step === 4 ? "confirm" : ""}
-        aria-label={step === 4 ? "Confirm order" : "Go to the next step"}
+        className={isLastStep ? "confirm" : ""}
+        aria-label={
+          isLastStep
+            ? "Confirm order"
+            : `Go to the next step (Step ${step + 1})`
+        }
       >
-        {step === 4 ? "Confirm" : "Next Step"}
+        <span aria-hidden="true">{isLastStep ? "Confirm" : "Next Step"}</span>
       </button>
+
       {step > 1 && (
         <button
           type="button"
           onClick={handleBackStep}
-          aria-label="Go to the previous step"
+          aria-label={`Go to the previous step (Step ${step - 1})`}
         >
-          Go Back
+          <span aria-hidden="true">Go Back</span>
         </button>
       )}
     </div>
