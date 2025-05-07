@@ -28,7 +28,7 @@ const Step4 = ({ formData, handleSideStepClick }: Step4Props) => {
 
   return (
     <fieldset className="step-4">
-      <legend id="form-title">Confirm Subscription</legend>
+      <legend>Confirm Subscription</legend>
       <h2 id="form-title">Finishing up</h2>
       <p>Double-check everything looks OK before confirming.</p>
       <div>
