@@ -84,7 +84,7 @@ const Step1 = ({ handleChange, formData }: StepProps) => {
             />
             <label htmlFor={id}>
               {label}
-              <span className="err-msg">
+              <span className="err-msg" role="alert">
                 {errors[name as keyof typeof errors]}
               </span>
             </label>
