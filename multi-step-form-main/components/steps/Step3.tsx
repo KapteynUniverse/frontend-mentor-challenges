@@ -32,7 +32,7 @@ const Step3 = ({ handleChange, formData }: StepProps) => {
   return (
     <fieldset className="step-3">
       <legend>Add-ons</legend>
-      <h2>Pick add-ons</h2>
+      <h2 id="form-title">Pick add-ons</h2>
       <p>Add-ons help enhance your gaming experience.</p>
       {addons.map(
         ({ id, name, label, description, monthlyPrice, yearlyPrice }) => (
