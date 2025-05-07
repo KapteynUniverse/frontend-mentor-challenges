@@ -384,13 +384,15 @@ input::placeholder {
 .toggle-container span {
   color: var(--grey);
 }
+
 .toggle-input:not(:checked):hover ~ label span:nth-of-type(2),
-.toggle-input:not(:checked):focus ~ label span:nth-of-type(2) {
+.toggle-input:not(:checked):focus-visible ~ label span:nth-of-type(2) {
   outline: solid 1px var(--blue-950);
   outline-offset: 2px;
 }
+
 .toggle-input:checked:hover ~ label span:nth-of-type(1),
-.toggle-input:checked:focus ~ label span:nth-of-type(1) {
+.toggle-input:checked:focus-visible ~ label span:nth-of-type(1) {
   outline: solid 1px var(--blue-950);
   outline-offset: 2px;
 }
