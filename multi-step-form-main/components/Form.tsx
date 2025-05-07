@@ -66,7 +66,7 @@ const Form = () => {
   return (
     <>
       {step < 5 ? (
-        <form ref={formRef}>
+        <form ref={formRef} method="post" aria-labelledby="form-title">
           <SideStepButtons
             handleSideStepClick={(nextStep) => {
               if (step === 1 && !formRef.current?.checkValidity()) {
