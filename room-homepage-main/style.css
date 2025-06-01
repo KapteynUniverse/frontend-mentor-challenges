@@ -191,6 +191,10 @@ button[aria-expanded="true"] ~ .overlay {
 
 /* MAIN */
 
+section {
+  background-color: var(--white);
+}
+
 .hero-text-container,
 .about-text-container {
   padding: 3rem 1.5rem;
