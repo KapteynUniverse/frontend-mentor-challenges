@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Room homepage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="hamburger-btn" aria-expanded="false" aria-controls="nav">
+        <img
+          src="./assets/images/icon-hamburger.svg"
+          alt="Open navigation menu"
+        />
+      </button>
+      <img src="./assets/images/logo.svg" alt="" class="logo" />
+      <nav id="nav">
+        <ul role="list">
+          <li><a href="#" aria-current="page">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="overlay" aria-hidden="true"></div>
+    </header>
+    <main>
+      <h1 class="sr-only">room main page</h1>
+      <section class="hero" aria-labelledby="hero-header">
+        <ul role="list">
+          <li>
+            <article>
+              <picture>
+                <source
+                  media="(min-width:556px)"
+                  srcset="./assets/images/desktop-image-hero-1.jpg"
+                  height="534"
+                  width="840"
+                />
+                <img
+                  src="./assets/images/mobile-image-hero-1.jpg"
+                  alt=""
+                  height="360"
+                  width="375"
+                />
+              </picture>
+              <div class="hero-text-container">
+                <h2 id="hero-header-3">Discover innovative ways to decorate</h2>
+                <p>
+                  We provide unmatched quality, comfort, and style for property
+                  owners across the country. Our experts combine form and
+                  function in bringing your vision to life. Create a room in
+                  your own style with our collection and make your property a
+                  reflection of you and what you love.
+                </p>
+                <a href="#" class="shop-btn"
+                  ><span aria-hidden="true">Shop now</span
+                  ><img
+                    src="./assets/images/icon-arrow.svg"
+                    alt="Click to go shopping page"
+                    height="12"
+                    width="40"
+                /></a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article>
+              <picture>
+                <source
+                  media="(min-width:556px)"
+                  srcset="./assets/images/desktop-image-hero-2.jpg"
+                  height="534"
+                  width="840"
+                />
+                <img
+                  src="./assets/images/mobile-image-hero-2.jpg"
+                  alt=""
+                  height="360"
+                  width="375"
+                />
+              </picture>
+              <div class="hero-text-container">
+                <h2 id="hero-header-2">
+                  We are available all across the globe
+                </h2>
+                <p>
+                  With stores all over the world, it's easy for you to find
+                  furniture for your home or place of business. Locally, we’re
+                  in most major cities throughout the country. Find the branch
+                  nearest you using our store locator. Any questions? Don't
+                  hesitate to contact us today.
+                </p>
+                <a href="#" class="shop-btn"
+                  ><span aria-hidden="true">Shop now</span
+                  ><img
+                    src="./assets/images/icon-arrow.svg"
+                    alt="Click to go shopping page"
+                    height="12"
+                    width="40"
+                /></a>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article>
+              <picture>
+                <source
+                  media="(min-width:556px)"
+                  srcset="./assets/images/desktop-image-hero-3.jpg"
+                  height="534"
+                  width="840"
+                />
+                <img
+                  src="./assets/images/mobile-image-hero-3.jpg"
+                  alt=""
+                  height="360"
+                  width="375"
+                />
+              </picture>
+              <div class="hero-text-container">
+                <h2 id="hero-header">Manufactured with the best materials</h2>
+                <p>
+                  Our modern furniture store provide a high level of quality.
+                  Our company has invested in advanced technology to ensure that
+                  every product is made as perfect and as consistent as
+                  possible. With three decades of experience in this industry,
+                  we understand what customers want for their home and office.
+                </p>
+                <a href="#" class="shop-btn"
+                  ><span aria-hidden="true">Shop now</span
+                  ><img
+                    src="./assets/images/icon-arrow.svg"
+                    alt="Click to go shopping page"
+                    height="12"
+                    width="40"
+                /></a>
+              </div>
+            </article>
+          </li>
+        </ul>
+        <div class="slider-btns">
+          <button>
+            <img
+              src="./assets/images/icon-angle-left.svg"
+              alt="Change to previous slide image"
+              height="24"
+              width="14"
+            /></button
+          ><button>
+            <img
+              src="./assets/images/icon-angle-right.svg"
+              alt="Change to next slide image"
+              height="24"
+              width="14"
+            />
+          </button>
+        </div>
+      </section>
+      <section class="about" aria-labelledby="about-header">
+        <img
+          src="./assets/images/image-about-dark.jpg"
+          alt=""
+          width="420"
+          height="266"
+        />
+        <div class="about-text-container">
+          <h3 id="about-header">About our furniture</h3>
+          <p>
+            Our multifunctional collection blends design and function to suit
+            your individual taste. Make each room unique, or pick a cohesive
+            theme that best express your interests and what inspires you. Find
+            the furniture pieces you need, from traditional to contemporary
+            styles or anything in between. Product specialists are available to
+            help you create your dream space.
+          </p>
+        </div>
+        <img
+          src="./assets/images/image-about-light.jpg"
+          alt=""
+          width="440"
+          height="226"
+        />
+      </section>
+    </main>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

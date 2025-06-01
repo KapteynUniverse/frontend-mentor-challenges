@@ -1,0 +1,341 @@
+@font-face {
+  font-family: LeagueSpartan;
+  src: local("LeagueSpartan"),
+    url("./assets/fonts/LeagueSpartan-VariableFont_wght.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --grey-500: hsl(0, 0%, 63%);
+  --grey-800: hsl(0, 0%, 27%);
+  --font-size-p: 0.75rem;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+}
+
+/* RESET */
+/* Josh Comeau custom css reset */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* PERSONAL PREFERENCE */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+button {
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+/* BASE STYLES */
+
+body {
+  font-family: LeagueSpartan;
+  min-height: 100dvh;
+  max-width: 90rem;
+  margin-inline: auto;
+  background-image: url("./assets/images/geometric-leaves.webp");
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo {
+  margin-inline: auto;
+  padding-right: 2rem;
+}
+
+nav {
+  position: fixed;
+  top: -100%;
+  right: 0;
+  background-color: var(--white);
+  text-transform: lowercase;
+  padding: 3rem 5rem;
+  width: 100%;
+  font-weight: var(--fw-600);
+  transition: top 0.3s ease-in-out;
+  z-index: 9;
+  & ul {
+    display: flex;
+    gap: 2rem;
+    margin-left: 1.5rem;
+  }
+}
+.hamburger-btn {
+  z-index: 10;
+}
+button[aria-expanded="true"] ~ nav {
+  top: 0;
+}
+
+button[aria-expanded="true"] ~ .overlay {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  z-index: 8;
+}
+
+/* MAIN */
+
+.hero-text-container,
+.about-text-container {
+  padding: 3rem 1.5rem;
+}
+
+section img {
+  width: 100%;
+  max-height: 33.375rem;
+  height: auto;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+div {
+  background-color: var(--white);
+}
+
+p {
+  color: var(--grey-500);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* SECTION 1 */
+
+.hero ul {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  & li {
+    min-width: fit-content;
+    scroll-snap-align: center;
+  }
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.slider-btns {
+  --btn-border-width: 2px;
+  --img-height: clamp(14.399rem, 0.023rem + 95.842vw, 50.34rem);
+  --btn-height: 24px;
+  --top-padding: 0.75rem;
+  --block-position-calculation: calc(
+    var(--img-height) - (var(--top-padding) * 2) - var(--btn-height) -
+      (var(--btn-border-width) * 2)
+  );
+  position: absolute;
+  right: 0;
+  top: var(--block-position-calculation);
+  max-width: fit-content;
+  background-color: var(--black);
+  & button {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+.shop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: 1.25ch;
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+  & span {
+    min-width: fit-content;
+  }
+}
+
+/* SECTION 2 */
+
+.about img {
+  object-position: center;
+  max-height: 27.5rem;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+@media screen and (min-width: 34.75rem) {
+  .slider-btns {
+    --img-height: clamp(22.091rem, -0.001rem + 63.574vw, 33.375rem);
+  }
+}
+
+@media screen and (min-width: 68.125rem) {
+  /* HEADER */
+  header {
+    margin: 2rem;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+
+  .logo {
+    margin-inline: 0;
+    padding-right: 0;
+  }
+
+  nav {
+    display: block;
+    position: static;
+    background-color: transparent;
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-weight: var(--fw-500);
+    & ul {
+      margin-left: 2rem;
+    }
+  }
+  /* SECTION 1 */
+
+  .hero article {
+    display: flex;
+    & picture {
+      flex: 0.6;
+    }
+    & .hero-text-container {
+      flex: 0.4;
+      padding: clamp(3rem, -3.229rem + 9.143vw, 5rem);
+    }
+  }
+  .hero {
+    position: relative;
+  }
+  .slider-btns {
+    --img-width: clamp(37.276rem, 3.877rem + 49.026vw, 48rem);
+    left: var(--img-width);
+    top: auto;
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 73.125rem) {
+  /* SECTION 2 */
+
+  .about {
+    display: flex;
+  }
+  .about-text-container {
+    padding: 4rem 3rem;
+  }
+}
