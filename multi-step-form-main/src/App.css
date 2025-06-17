@@ -564,7 +564,7 @@ input::placeholder {
   form {
     position: relative;
     display: flex;
-    background-color: var(--blue-50);
+    background-color: var(--white);
     padding: 1rem;
     border-radius: 0.5rem;
     min-height: 35rem;
