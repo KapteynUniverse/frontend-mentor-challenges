@@ -653,3 +653,9 @@ input::placeholder {
     align-content: center;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
