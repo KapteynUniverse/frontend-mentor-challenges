@@ -552,23 +552,17 @@ input::placeholder {
   scale: 0.75;
 }
 
-.step-1,
-.step-2,
-.step-3,
-.step-4,
+fieldset,
 .step-5 {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
 }
 
 @starting-style {
-  .step-1,
-  .step-2,
-  .step-3,
-  .step-4,
-  .step-5 {
-    opacity: 0;
-  }
+    fieldset,
+    .step-5 {
+        opacity: 0;
+    }
 }
 
 @media screen and (min-width: 50rem) {
