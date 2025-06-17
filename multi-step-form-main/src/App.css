@@ -223,7 +223,7 @@ label span {
 fieldset,
 .step-4,
 .step-5 {
-  background-color: white;
+  background-color: var(--white);
   max-width: 26.5rem;
   width: 90%;
   border-color: transparent;
@@ -276,7 +276,7 @@ fieldset,
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   padding: 1rem;
 }
 
@@ -639,7 +639,7 @@ input::placeholder {
 
   .last-step {
     display: flex;
-    background-color: white;
+    background-color: var(--white);
     max-width: 63.75rem;
     width: 90%;
     margin-inline: auto;
