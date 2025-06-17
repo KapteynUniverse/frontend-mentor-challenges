@@ -65,7 +65,6 @@ const Form = () => {
 
   return (
     <>
-      <h1 class="sr-only">Multi Step Form</h1>
       {step < 5 ? (
         <form ref={formRef} method="post" aria-labelledby="form-title">
           <SideStepButtons
