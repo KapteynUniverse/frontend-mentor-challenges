@@ -8,7 +8,8 @@ export default async function Page({
   params: Promise<{ name: string }>;
 }) {
   const { name } = await params;
-  const selectedCountry = await getCountry(name);
+  const decodedName = decodeURIComponent(name);
+  const selectedCountry = await getCountry(decodedName);
   const allCountries = await getCountries();
   const countryData = selectedCountry[0];
 
@@ -18,8 +19,9 @@ export default async function Page({
       <CountryCard
         countryData={countryData}
         allCountries={allCountries}
-        countryName={name}
+        countryName={decodedName}
       />
     </section>
   );
 }
+
