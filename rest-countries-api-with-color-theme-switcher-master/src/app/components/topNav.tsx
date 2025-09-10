@@ -17,7 +17,7 @@ const TopNav = () => {
       aria-label="Alphabet Navigation"
       className="my-8 limit-vw"
     >
-      <ul className="flex gap-4 justify-center flex-wrap">
+      <ul className="flex gap-2 justify-center flex-wrap">
         {Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i))
           .filter((letter) => letter !== "X")
           .map((letter) => (
@@ -25,7 +25,7 @@ const TopNav = () => {
               <Link
                 href={`/${letter}`}
                 aria-current={currentPage === letter ? "page" : undefined}
-                className={`font-semibold hover-element focus:outline-offset-4 ${
+                className={`px-2 font-semibold hover-element focus:outline-offset-4 ${
                   currentPage === letter && "active-link"
                 }`}
               >
@@ -40,3 +40,4 @@ const TopNav = () => {
 };
 
 export default TopNav;
+
