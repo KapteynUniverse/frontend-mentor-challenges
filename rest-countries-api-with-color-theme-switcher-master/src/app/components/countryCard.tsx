@@ -52,7 +52,7 @@ const CountryCard = ({
         ) : (
           <h3
             id="country-title"
-            className={`mb-4 font-extrabold ${countryName ? "text-4xl" : ""}`}
+            className={`mb-4 text-xl font-extrabold ${countryName ? "text-4xl" : ""}`}
           >
             {countryData.name.common}
           </h3>
@@ -134,3 +134,4 @@ const CountryCard = ({
 };
 
 export default CountryCard;
+
