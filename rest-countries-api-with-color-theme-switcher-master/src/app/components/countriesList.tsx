@@ -14,7 +14,7 @@ const CountriesList = ({
           key={country.name.common}
           className="max-w-[17.5rem] rounded-md overflow-hidden w-full shadow"
         >
-          <Link href={`/country/${country.name.common}`} className="group">
+          <Link href={`/country/${encodeURIComponent(country.name.common)}`} className="group">
             <CountryCard countryData={country} allCountries={CountriesData} />
           </Link>
         </li>
@@ -24,4 +24,5 @@ const CountriesList = ({
 };
 
 export default CountriesList;
+
 
