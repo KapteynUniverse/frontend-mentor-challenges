@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+:root {
+  color-scheme: light dark;
+  /* Base colors */
+  --background-light: hsl(0, 0%, 99%);
+  --background-dark: hsl(207, 26%, 17%);
+  --foreground-light: hsl(200, 15%, 8%);
+  --foreground-dark: hsl(0, 100%, 100%);
+  /* Surfaces (cards, headers, nav, etc.) */
+  --color-surface-light: hsl(0, 0%, 100%);
+  --color-surface-dark: hsl(209, 23%, 22%);
+  /* Accent & interactive states */
+  --color-accent-light: hsl(220, 80%, 45%);
+  --color-accent-dark: hsl(200, 100%, 75%);
+  /* Links */
+  --link-active-light: hsl(207, 90%, 20%);
+  --link-active-dark: hsl(207, 100%, 85%);
+  /* Semantic tokens */
+  --bg: light-dark(var(--background-light), var(--background-dark));
+  --fg: light-dark(var(--foreground-light), var(--foreground-dark));
+  --surface: light-dark(var(--color-surface-light), var(--color-surface-dark));
+  --hover: light-dark(var(--color-accent-light), var(--color-accent-dark));
+  --active: light-dark(var(--link-active-light), var(--link-active-dark));
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+:root[data-theme="system"] {
+  color-scheme: light dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+header,
+article:not([id]),
+a[id],
+button,
+input,
+select {
+  background-color: var(--surface);
+}
+
+@layer utilities {
+  .limit-vw {
+    @apply max-w-[90rem] w-11/12 mx-auto;
+  }
+  .shadow {
+    @apply shadow-[0_0_10px_rgba(0,0,0,0.25)];
+  }
+  .skip-link {
+    @apply absolute left-0 bg-black text-white px-3 py-2 z-[1000] transition-all;
+    top: -40px;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+  .article-focus {
+    @apply group-focus-within:border-2 group-focus-within:border-(--fg) hover:opacity-75 transition-opacity;
+  }
+  .select-arrow {
+    @apply relative inline-block after:content-['▼'] after:absolute after:right-3 after:top-1/2 after:-translate-y-1/2 after:pointer-events-none after:text-(--fg) after:text-xs;
+  }
+  .hover-element {
+    @apply hover:text-(--hover) transition-all focus:text-(--hover);
+  }
+  .active-link {
+    @apply text-(--active);
+  }
+}
