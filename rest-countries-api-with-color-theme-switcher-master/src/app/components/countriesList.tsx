@@ -8,7 +8,7 @@ const CountriesList = ({
   CountriesData: CountryDataType[];
 }) => {
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,minmax(17.5rem,1fr))] gap-8 md:gap-16 place-items-center">
+    <ul className="grid grid-cols-[repeat(auto-fit,minmax(17.5rem,1fr))] gap-8 md:gap-16 place-items-center" aria-live="polite">
       {CountriesData.map((country: CountryDataType) => (
         <li
           key={country.name.common}
@@ -24,3 +24,4 @@ const CountriesList = ({
 };
 
 export default CountriesList;
+
