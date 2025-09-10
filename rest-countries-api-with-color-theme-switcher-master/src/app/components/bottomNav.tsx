@@ -11,13 +11,13 @@ const BottomNav = ({ pageCalculate }: { pageCalculate: number }) => {
   if (query.trim()) return null;
   return (
     <nav id="pagination-nav" aria-label="Page Navigation" className="my-8">
-      <ul className="flex gap-4 justify-center">
+      <ul className="flex gap-2 justify-center">
         {Array.from({ length: pageCalculate }, (_, i) => (
           <li key={i}>
             <Link
               href={`/${i + 1}`}
               aria-current={currentPage === i + 1 ? "page" : undefined}
-              className={`font-semibold hover-element focus:outline-offset-4 ${
+              className={`px-4 font-semibold hover-element focus:outline-offset-4 ${
                 currentPage === i + 1 && "active-link"
               }`}
             >
@@ -32,3 +32,4 @@ const BottomNav = ({ pageCalculate }: { pageCalculate: number }) => {
 };
 
 export default BottomNav;
+
