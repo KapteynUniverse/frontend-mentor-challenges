@@ -77,3 +77,9 @@ select {
     @apply text-(--active);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+  }
+}
